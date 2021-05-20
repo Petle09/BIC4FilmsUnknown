@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="section is-fullheight">
-        <example-component title="Dashboard">
+        <example-component title="Dashboard">                               <!--  <example-component></example-component> ist eine vue componente  -->
             @if (session('status'))
                 <query-message :success="true" :fail="false" message="{{ session('status') }}"></query-message>
             @endif
