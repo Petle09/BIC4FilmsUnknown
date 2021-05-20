@@ -1927,6 +1927,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//jede neue Komponente muss man in resources/app.js registrieren, so wie die ExampleComponent
+//Dann kann man, wenn eine neue Komponente erstellt wurde unter /views/irgendeeinedatei.php seine Komponente eintragen, Bsp:in der home.blade.php ist die  <example-component></example-component> drinnen
+// in den Ordnern "actor" "auth" "film" usw sind die pages drinnen die man auf der Hompage in dem Nav menü auswählen kann
+// die app.blade.php ist eine Layout Datei, da drinnen is das gesamte Layout der seite, man braucht nur @extends('layouts.app') und @section('content') in einer neue seite, das layout wird dann um den content herumgebaut
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['title'],
   mounted: function mounted() {
@@ -31930,6 +31934,7 @@ window.Vue = vue__WEBPACK_IMPORTED_MODULE_0___default.a;
  */
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+// Hier Komponenten eintragen
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('query-message', __webpack_require__(/*! ./components/base/QueryMessage.vue */ "./resources/js/components/base/QueryMessage.vue")["default"]);
@@ -32371,8 +32376,8 @@ var Form = /*#__PURE__*/function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\devel\Desktop\bic4filmsunknown\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\devel\Desktop\bic4filmsunknown\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\chris\PhpstormProjects\BIC4FilmsUnknown\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\chris\PhpstormProjects\BIC4FilmsUnknown\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
