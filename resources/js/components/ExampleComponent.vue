@@ -22,8 +22,8 @@
 //Dann kann man, wenn eine neue Komponente erstellt wurde unter /views/irgendeeinedatei.php seine Komponente eintragen, Bsp:in der home.blade.php ist die  <example-component></example-component> drinnen
 // in den Ordnern "actor" "auth" "film" usw sind die pages drinnen die man auf der Hompage in dem Nav menü auswählen kann
 // die app.blade.php ist eine Layout Datei, da drinnen is das gesamte Layout der seite, man braucht nur @extends('layouts.app') und @section('content') in einer neue seite, das layout wird dann um den content herumgebaut
-    export default {
-        props: ['title'],
+export default {
+    props: ['title'],
         mounted() {
             console.log('Component mounted.')
         }
