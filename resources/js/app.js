@@ -23,9 +23,11 @@ window.Vue = vue;
 // Hier Komponenten eintragen
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('query-message', require('./components/base/QueryMessage.vue').default);
+Vue.component('Nr2', require('./components/Exampl2Component.vue').default);
 
 //Own Components
-Vue.component('Liste', require('./components/Liste.vue').default);
+Vue.component('list', require('./components/MovielistComponent.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

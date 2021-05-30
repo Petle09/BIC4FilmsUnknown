@@ -6,9 +6,10 @@
             @if (session('status'))
                 <query-message :success="true" :fail="false" message="{{ session('status') }}"></query-message>
             @endif
-            <p>Willkommen Benutzer:  <strong>{{ auth()->user()->name }}</strong>.<br>Wählen sie eine Funktion aus! </p>
+            <p>Willkommen Benutzer: <strong>{{ auth()->user()->name }}</strong>.<br>Wählen sie eine Funktion aus! </p>
 
             <img src = "img/Videothek.jpg"  />
+            <liste></liste>
 
 
         </example-component>

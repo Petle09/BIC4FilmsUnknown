@@ -4,7 +4,10 @@
 @section('content')
     <section class="section">
         <div class="container">
-            <h1>List film</h1>
+            <list></list>
         </div>
     </section>
 @endsection
+<script>
+
+</script>
