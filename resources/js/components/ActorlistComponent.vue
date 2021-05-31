@@ -3,18 +3,18 @@
 
         <!--                        <label class="label" for="invention">Inventions</label>-->
 
-        <Table id="invention" class="table is-5-desktop is-hoverable has-background-primary has-text-white">
+        <Table id="Actors" class="table is-5-desktop is-hoverable has-background-primary has-text-white">
             <thead>
             <tr class="title is-7">
                 <TableElement element-type="th">ID</TableElement>
                 <TableElement element-type="th">Name</TableElement>
-                <TableElement element-type="th">Description</TableElement>
+                <TableElement element-type="th">Vita</TableElement>
                 <TableElement element-type="th">Updated</TableElement>
                 <TableElement element-type="th"></TableElement>
             </tr>
             </thead>
             <tbody>
-            <tr v-for="data in films" :key="data.id">
+            <tr v-for="data in actors" :keydata.="id">
 
                 <TableElement element-type="td">
                     <a :href="'/data/' + data.slug"
@@ -34,7 +34,7 @@
 
 import TableElement from "./base/TableComponent";
 export default {
-    name: "MovielistComponent",
+    name: "ActorlistComponent",
     components: {
         TableElement,
 
@@ -45,16 +45,16 @@ export default {
     },
     data() {
         return {
-            films: [],
+            actors: [],
             loading: true,
             noDomains: false,
         }
     },
     methods: {
         getList() {
-            axios.get('/list/film')
+            axios.get('/list/actor')
                 .then(response => {
-                    this.films = response.data;
+                    this.actors = response.data;
                     console.log(response);
                     this.loading = false;
                     if (this.loading)

@@ -26,8 +26,11 @@ Vue.component('query-message', require('./components/base/QueryMessage.vue').def
 Vue.component('Nr2', require('./components/Exampl2Component.vue').default);
 
 //Own Components
-Vue.component('list', require('./components/MovielistComponent.vue').default);
+Vue.component('movielist', require('./components/MovielistComponent.vue').default);
+Vue.component('actorlist', require('./components/ActorlistComponent.vue').default);
+Vue.component('searchactor', require('./components/SearchActorComponent.vue').default);
 
+Vue.component('tables', require('./components/base/TableComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

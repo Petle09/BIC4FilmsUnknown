@@ -1,20 +1,22 @@
 <template>
-    <div class="table-container is-2-tablet">
+    <div>
 
-        <!--                        <label class="label" for="invention">Inventions</label>-->
+        <input id="input" v-model="message" placeholder="Actor????">
 
-        <Table id="invention" class="table is-5-desktop is-hoverable has-background-primary has-text-white">
+       <!-- <p v-for="data in actors" v-if="data.name === message"></p> -->
+
+       <Table id="Actors" class="table is-5-desktop is-hoverable has-background-primary has-text-white">
             <thead>
             <tr class="title is-7">
                 <TableElement element-type="th">ID</TableElement>
                 <TableElement element-type="th">Name</TableElement>
-                <TableElement element-type="th">Description</TableElement>
+                <TableElement element-type="th">Vita</TableElement>
                 <TableElement element-type="th">Updated</TableElement>
                 <TableElement element-type="th"></TableElement>
             </tr>
             </thead>
             <tbody>
-            <tr v-for="data in films" :key="data.id">
+            <tr  v-for="data in actors" v-if="data.name.toLowerCase().includes(message.toLowerCase())">
 
                 <TableElement element-type="td">
                     <a :href="'/data/' + data.slug"
@@ -26,18 +28,21 @@
             </tr>
             </tbody>
         </Table>
+
     </div>
+
 
 </template>
 
 <script>
-
 import TableElement from "./base/TableComponent";
-export default {
-    name: "MovielistComponent",
-    components: {
-        TableElement,
+import FindActorComponent from "./FindActorComponent";
 
+export default {
+    name: "SearchActorComponent",
+    components: {
+        FindActorComponent,
+        TableElement,
     },
     props: ['title'],
     mounted() {
@@ -45,16 +50,17 @@ export default {
     },
     data() {
         return {
-            films: [],
+            actors: [],
+            message: '',
             loading: true,
             noDomains: false,
         }
     },
     methods: {
         getList() {
-            axios.get('/list/film')
+            axios.get('/list/actor')
                 .then(response => {
-                    this.films = response.data;
+                    this.actors = response.data;
                     console.log(response);
                     this.loading = false;
                     if (this.loading)
@@ -65,3 +71,7 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+
+</style>

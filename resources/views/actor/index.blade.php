@@ -5,8 +5,7 @@
     <section class="section">
         <div class="container">
             <h1>List actors</h1>
-            <example-component>Hallo Zauner</example-component>
-
+            <Actorlist></Actorlist>
         </div>
     </section>
 @endsection
