@@ -20417,7 +20417,7 @@ var render = function() {
         "Table",
         {
           staticClass:
-            "table is-5-desktop is-hoverable has-background-primary has-text-white",
+            "table is-5-desktop is-hoverable has-background-primary has-text-black",
           attrs: { id: "invention" }
         },
         [
@@ -32914,6 +32914,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _utilities_Form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utilities/Form */ "./resources/js/utilities/Form.js");
 /* harmony import */ var _components_base_QueryMessage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/base/QueryMessage */ "./resources/js/components/base/QueryMessage.vue");
+/* harmony import */ var _components_base_TableComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/base/TableComponent */ "./resources/js/components/base/TableComponent.vue");
 /**
  * Load all needed JavaScript modules for working with ajax-requests and some
  * base compulsory functions for using data objects.
@@ -32925,10 +32926,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 window._ = lodash__WEBPACK_IMPORTED_MODULE_0___default.a;
 window.axios = axios__WEBPACK_IMPORTED_MODULE_1___default.a;
 window.QueryMessage = _components_base_QueryMessage__WEBPACK_IMPORTED_MODULE_3__["default"];
-window.Form = _utilities_Form__WEBPACK_IMPORTED_MODULE_2__["default"]; // Set token in header for axios to keep requests secure
+window.Form = _utilities_Form__WEBPACK_IMPORTED_MODULE_2__["default"];
+window.Table = _components_base_TableComponent__WEBPACK_IMPORTED_MODULE_4__["default"]; // Set token in header for axios to keep requests secure
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var token = document.head.querySelector('meta[name="csrf-token"]');
@@ -33739,8 +33742,8 @@ var Form = /*#__PURE__*/function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Zauna\PhpstormProjects\BIC4FilmsUnknown\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Zauna\PhpstormProjects\BIC4FilmsUnknown\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\chris\PhpstormProjects\BIC4FilmsUnknown\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\chris\PhpstormProjects\BIC4FilmsUnknown\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

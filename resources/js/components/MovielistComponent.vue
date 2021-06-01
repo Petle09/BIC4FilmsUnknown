@@ -3,7 +3,7 @@
 
         <!--                        <label class="label" for="invention">Inventions</label>-->
 
-        <Table id="invention" class="table is-5-desktop is-hoverable has-background-primary has-text-white">
+        <Table id="invention" class="table is-5-desktop is-hoverable has-background-primary has-text-black">
             <thead>
             <tr class="title is-7">
                 <TableElement element-type="th">ID</TableElement>
