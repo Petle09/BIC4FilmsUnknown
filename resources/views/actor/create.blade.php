@@ -5,6 +5,7 @@
     <section class="section">
         <div class="container">
             <h1>Create actor</h1>
+            <editactor></editactor>
         </div>
     </section>
 @endsection

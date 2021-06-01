@@ -29,8 +29,8 @@ Vue.component('Nr2', require('./components/Exampl2Component.vue').default);
 Vue.component('movielist', require('./components/MovielistComponent.vue').default);
 Vue.component('actorlist', require('./components/ActorlistComponent.vue').default);
 Vue.component('searchactor', require('./components/SearchActorComponent.vue').default);
-
 Vue.component('tables', require('./components/base/TableComponent.vue').default);
+Vue.component('editactor', require('./components/EditActorComponent').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

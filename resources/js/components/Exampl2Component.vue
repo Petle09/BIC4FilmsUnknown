@@ -62,7 +62,7 @@ export default {
         }
     },
     created() {                                                 // den axios.get Aufruf benutzen wir hier um Daten von der Database auszulesen.... die funktion ist in list/domain/ (heisst bei euch anders)
-        axios.get('/list/domain')                           // Das ist ein AJAX Methoden Aufruf ....  die Url für die methode muss man mitgeben... und der Aufruf passiert mit "get"
+        axios.get('/list/actor')                           // Das ist ein AJAX Methoden Aufruf ....  die Url für die methode muss man mitgeben... und der Aufruf passiert mit "get"
             .then(response => {                                 // Die Homepage ist ja nicht am Server(wenn ein Client sich verbindet ladets der ja runter)
                 this.domains = response.data;                   // Das heisst auch hier(lokal) wird mit "get" und "post" aufrufen gearbeitet wenn man eine Funktion vom Backend aufrufen will
                                                                 // die verfügbaren Methoden stehen in routes/web.php
