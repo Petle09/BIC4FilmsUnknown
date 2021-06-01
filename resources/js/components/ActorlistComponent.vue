@@ -1,9 +1,7 @@
 <template>
     <div class="table-container is-2-tablet">
 
-        <!--                        <label class="label" for="invention">Inventions</label>-->
-
-        <Table id="Actors" class="table is-5-desktop is-hoverable has-background-primary has-text-white">
+        <Table id="Actors" class="table is-5-desktop is-hoverable has-background-primary has-text-black">
             <thead>
             <tr class="title is-7">
                 <TableElement element-type="th">ID</TableElement>
@@ -15,14 +13,13 @@
             </thead>
             <tbody>
             <tr v-for="data in actors" :keydata.="id">
-
                 <TableElement element-type="td">
-                    <a :href="'/data/' + data.slug"
-                       :title="data.id" v-text="data.id"/></TableElement>
+                    <a :href="'/actor/'+data.slug+'/edit'"
+                       :title="'Edit'" v-text="data.id"/></TableElement>
                 <TableElement element-type="td">{{ data.name }}</TableElement>
                 <TableElement element-type="td">{{ data.description }}</TableElement>
                 <TableElement element-type="td">{{ data.updated_at }}</TableElement>
-                <TableElement element-type="td" style="width: 500px"></TableElement>
+                <TableElement element-type="td" style="width: 200px"></TableElement>
             </tr>
             </tbody>
         </Table>
@@ -37,7 +34,6 @@ export default {
     name: "ActorlistComponent",
     components: {
         TableElement,
-
     },
     props: ['title'],
     mounted() {
@@ -65,3 +61,6 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+</style>

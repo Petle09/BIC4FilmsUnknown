@@ -1938,9 +1938,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ActorlistComponent",
@@ -1993,58 +1990,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "EditActorComponent",
   components: {
     TableElement: _base_TableComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: ['title'],
+  props: ['actor'],
   mounted: function mounted() {
     this.getList();
   },
   data: function data() {
     return {
       actors: [],
-      message: '',
       loading: true,
-      noDomains: false
+      noDomains: false,
+      currentLocation: window.location.pathname,
+      buffer: '',
+      currentSlug: ''
     };
   },
   methods: {
-    test1: function test1(event) {
-      console.log('Das ist ein test');
-    },
     getList: function getList() {
       var _this = this;
 
-      axios.get('/list/actor').then(function (response) {
+      this.buffer = this.currentLocation.split('/');
+      this.currentSlug = this.buffer[this.buffer.length - 2];
+      axios.post('/search/actor/', {
+        'q': this.currentSlug
+      }) //axios.get('/actor/'+this.currentSlug)
+      .then(function (response) {
         _this.actors = response.data;
         console.log(response);
         _this.loading = false;
@@ -20204,10 +20179,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ActorlistComponent.vue?vue&type=template&id=2c03e256&":
-/*!*********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ActorlistComponent.vue?vue&type=template&id=2c03e256& ***!
-  \*********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ActorlistComponent.vue?vue&type=template&id=2c03e256&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ActorlistComponent.vue?vue&type=template&id=2c03e256&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -20227,7 +20202,7 @@ var render = function() {
         "Table",
         {
           staticClass:
-            "table is-5-desktop is-hoverable has-background-primary has-text-white",
+            "table is-5-desktop is-hoverable has-background-primary has-text-black",
           attrs: { id: "Actors" }
         },
         [
@@ -20267,7 +20242,10 @@ var render = function() {
                 [
                   _c("TableElement", { attrs: { "element-type": "td" } }, [
                     _c("a", {
-                      attrs: { href: "/data/" + data.slug, title: data.id },
+                      attrs: {
+                        href: "/actor/" + data.slug + "/edit",
+                        title: "Edit"
+                      },
                       domProps: { textContent: _vm._s(data.id) }
                     })
                   ]),
@@ -20285,7 +20263,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("TableElement", {
-                    staticStyle: { width: "500px" },
+                    staticStyle: { width: "200px" },
                     attrs: { "element-type": "td" }
                   })
                 ],
@@ -20322,115 +20300,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.message,
-            expression: "message"
-          }
-        ],
-        attrs: { id: "input", placeholder: "Actor????" },
-        domProps: { value: _vm.message },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.message = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c(
-        "Table",
-        {
-          staticClass:
-            "table is-5-desktop is-hoverable has-background-primary has-text-black",
-          attrs: { id: "Actors" }
-        },
-        [
-          _c("thead", [
-            _c(
-              "tr",
-              { staticClass: "title is-7" },
-              [
-                _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("ID")
-                ]),
-                _vm._v(" "),
-                _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("Name")
-                ]),
-                _vm._v(" "),
-                _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("Vita")
-                ]),
-                _vm._v(" "),
-                _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("Updated")
-                ]),
-                _vm._v(" "),
-                _c("TableElement", { attrs: { "element-type": "th" } })
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            _vm._l(_vm.actors, function(data) {
-              return data.name.toLowerCase().includes(_vm.message.toLowerCase())
-                ? _c(
-                    "tr",
-                    [
-                      _c("TableElement", { attrs: { "element-type": "td" } }, [
-                        _c("a", {
-                          attrs: { href: "/data/" + data.slug, title: data.id },
-                          domProps: { textContent: _vm._s(data.id) }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("TableElement", { attrs: { "element-type": "td" } }, [
-                        _vm._v(_vm._s(data.name))
-                      ]),
-                      _vm._v(" "),
-                      _c("TableElement", { attrs: { "element-type": "td" } }, [
-                        _vm._v(_vm._s(data.description))
-                      ]),
-                      _vm._v(" "),
-                      _c("TableElement", { attrs: { "element-type": "td" } }, [
-                        _vm._v(_vm._s(data.updated_at))
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "TableElement",
-                        {
-                          staticStyle: { width: "200px" },
-                          attrs: { "element-type": "td" }
-                        },
-                        [
-                          _c("button", { on: { click: _vm.test1 } }, [
-                            _vm._v("versuch")
-                          ])
-                        ]
-                      )
-                    ],
-                    1
-                  )
-                : _vm._e()
-            }),
-            0
-          )
-        ]
-      )
-    ],
-    1
-  )
+  return _c("div", [
+    _vm._v(
+      "\n\n    " +
+        _vm._s(_vm.actor) +
+        "\n    " +
+        _vm._s(_vm.currentSlug) +
+        "\n\n"
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -33184,7 +33062,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ActorlistComponent_vue_vue_type_template_id_2c03e256___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ActorlistComponent.vue?vue&type=template&id=2c03e256& */ "./resources/js/components/ActorlistComponent.vue?vue&type=template&id=2c03e256&");
+/* harmony import */ var _ActorlistComponent_vue_vue_type_template_id_2c03e256_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ActorlistComponent.vue?vue&type=template&id=2c03e256&scoped=true& */ "./resources/js/components/ActorlistComponent.vue?vue&type=template&id=2c03e256&scoped=true&");
 /* harmony import */ var _ActorlistComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ActorlistComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ActorlistComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -33196,11 +33074,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _ActorlistComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ActorlistComponent_vue_vue_type_template_id_2c03e256___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ActorlistComponent_vue_vue_type_template_id_2c03e256___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _ActorlistComponent_vue_vue_type_template_id_2c03e256_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ActorlistComponent_vue_vue_type_template_id_2c03e256_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "2c03e256",
   null
   
 )
@@ -33226,19 +33104,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/ActorlistComponent.vue?vue&type=template&id=2c03e256&":
-/*!***************************************************************************************!*\
-  !*** ./resources/js/components/ActorlistComponent.vue?vue&type=template&id=2c03e256& ***!
-  \***************************************************************************************/
+/***/ "./resources/js/components/ActorlistComponent.vue?vue&type=template&id=2c03e256&scoped=true&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/components/ActorlistComponent.vue?vue&type=template&id=2c03e256&scoped=true& ***!
+  \***************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActorlistComponent_vue_vue_type_template_id_2c03e256___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ActorlistComponent.vue?vue&type=template&id=2c03e256& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ActorlistComponent.vue?vue&type=template&id=2c03e256&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActorlistComponent_vue_vue_type_template_id_2c03e256___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActorlistComponent_vue_vue_type_template_id_2c03e256_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ActorlistComponent.vue?vue&type=template&id=2c03e256&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ActorlistComponent.vue?vue&type=template&id=2c03e256&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActorlistComponent_vue_vue_type_template_id_2c03e256_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActorlistComponent_vue_vue_type_template_id_2c03e256___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActorlistComponent_vue_vue_type_template_id_2c03e256_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
