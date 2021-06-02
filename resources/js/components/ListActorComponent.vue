@@ -14,8 +14,9 @@
             <tbody>
             <tr v-for="data in actors" :keydata.="id">
                 <TableElement element-type="td">
-                    <a :href="'/actor/'+data.slug+'/edit'"
-                       :title="'Edit'" v-text="data.id"/></TableElement>
+              <a :href="'/actor/'+data.slug"
+                   :title="'Edit'" v-text="data.id"/>
+                </TableElement>
                 <TableElement element-type="td">{{ data.name }}</TableElement>
                 <TableElement element-type="td">{{ data.description }}</TableElement>
                 <TableElement element-type="td">{{ data.updated_at }}</TableElement>

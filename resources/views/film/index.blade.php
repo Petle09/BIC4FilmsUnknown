@@ -4,7 +4,7 @@
 @section('content')
     <section class="section">
         <div class="container">
-            <movielist></movielist>
+            <list-movie></list-movie>
         </div>
     </section>
 @endsection

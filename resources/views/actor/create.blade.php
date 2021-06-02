@@ -3,8 +3,11 @@
 
 @section('content')
     <section class="section">
-        <div class="container">
-            <h1>Create actor</h1>
-        </div>
+        <create-actor  component_title="Schauspieler Anlegen">
+
+        </create-actor>
     </section>
 @endsection
+<script>
+
+</script>

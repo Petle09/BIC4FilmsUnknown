@@ -5,7 +5,7 @@
     <section class="section">
         <div class="container">
             <h1>List actors</h1>
-            <Actorlist></Actorlist>
+            <list-actor></list-actor>
         </div>
     </section>
 @endsection

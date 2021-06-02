@@ -19,8 +19,11 @@
             <tr  v-for="data in actors" v-if="data.name.toLowerCase().includes(message.toLowerCase())">
 
                 <TableElement element-type="td">
-                    <a :href="'/data/' + data.slug"
-                       :title="data.id" v-text="data.id"/></TableElement>
+                    <a :href="'/actor/' + data.slug"
+                       :title="data.id" v-text="data.id"/>
+<!--                  <a :href="'/data/' + data.slug"
+                       :title="data.id" v-text="data.id"/> -->
+                </TableElement>
                 <TableElement element-type="td">{{ data.name }}</TableElement>
                 <TableElement element-type="td">{{ data.description }}</TableElement>
                 <TableElement element-type="td">{{ data.updated_at }}</TableElement>

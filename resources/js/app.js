@@ -14,23 +14,26 @@ window.Vue = vue;
  * Vue components. It will recursively scan this directory for the Vue
  * components and automatically register them with their "basename".
  *
- * Eg. ./components/MainMenueComponent.vue -> <example-component></example-component>
+ * Eg. ./components/MainMenuComponent.vue -> <example-component></example-component>
  */
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 // Hier Komponenten eintragen
-Vue.component('mainMenue', require('./components/MainMenueComponent.vue').default);
+Vue.component('mainMenu', require('./components/MainMenuComponent.vue').default);
 Vue.component('query-message', require('./components/base/QueryMessage.vue').default);
 Vue.component('Nr2', require('./components/Exampl2Component.vue').default);
 
 //Own Components
-Vue.component('movielist', require('./components/MovielistComponent.vue').default);
-Vue.component('actorlist', require('./components/ActorlistComponent.vue').default);
-Vue.component('searchactor', require('./components/SearchActorComponent.vue').default);
+Vue.component('listMovie', require('./components/ListMovieComponent.vue').default);
+Vue.component('listActor', require('./components/ListActorComponent.vue').default);
+Vue.component('searchActor', require('./components/SearchActorComponent.vue').default);
 Vue.component('tables', require('./components/base/TableComponent.vue').default);
-Vue.component('editactor', require('./components/EditActorComponent').default);
+Vue.component('editActor', require('./components/EditActorComponent.vue').default);
+Vue.component('createActor',require('./components/CreateActorComponent.vue').default);
+Vue.component('createMovie',require('./components/CreateMovieComponent.vue').default);
+Vue.component('showActor',require('./components/ShowActorComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
