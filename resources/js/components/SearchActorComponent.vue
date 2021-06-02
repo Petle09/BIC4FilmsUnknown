@@ -5,7 +5,7 @@
 
        <!-- <p v-for="data in actors" v-if="data.name === message"></p> -->
 
-       <Table id="Actors" class="table is-5-desktop is-hoverable has-background-primary has-text-white">
+       <Table id="Actors" class="table is-5-desktop is-hoverable has-background-primary has-text-black">
             <thead>
             <tr class="title is-7">
                 <TableElement element-type="th">ID</TableElement>
