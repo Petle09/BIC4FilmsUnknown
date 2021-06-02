@@ -8,7 +8,7 @@
         <div class="box px-4 py-4">
             <div class="field">
                 <label class="label">Name</label>
-                <div class="control">
+                <div class="field">
                     <input class="input" type="Name" placeholder="Filmtitel">
                 </div>
             </div>

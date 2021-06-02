@@ -8,7 +8,7 @@
         <div class="box px-4 py-4">
             <div class="field">
                 <label class="label">Name</label>
-                <div class="control">
+                <div class="field">
                     <input class="input" type="Name" placeholder="Max Mustermann">
                 </div>
             </div>
@@ -20,7 +20,7 @@
             </div>
             <div class="field">
                 <label class="label">Film ID</label>
-                <div class="control">
+                <div class="field">
                     <input class="input" type="Film ID" placeholder="Film ID">
                 </div>
             </div>
