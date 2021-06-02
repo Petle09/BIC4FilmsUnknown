@@ -1,15 +1,12 @@
 <template>
-    <div class="table-container is-2-tablet">
-
-        <!--                        <label class="label" for="invention">Inventions</label>-->
-
-        <Table id="invention" class="table is-5-desktop is-hoverable has-background-primary has-text-black">
-            <thead>
-            <tr class="title is-7">
+    <div class="table-container">
+        <Table id="Filmliste" class="table">
+            <thead class="title">
+            <tr class="title">
                 <TableElement element-type="th">ID</TableElement>
                 <TableElement element-type="th">Name</TableElement>
-                <TableElement element-type="th">Description</TableElement>
-                <TableElement element-type="th">Updated</TableElement>
+                <TableElement element-type="th">Beschreibung:</TableElement>
+                <TableElement element-type="th">Zuletzt geändert:</TableElement>
                 <TableElement element-type="th"></TableElement>
             </tr>
             </thead>
@@ -18,7 +15,7 @@
 
                 <TableElement element-type="td">
                     <a :href="'/data/' + data.slug"
-                       :title="data.id" v-text="data.id"/></TableElement>
+                       :title="'Bearbeiten'" v-text="data.id"/></TableElement>
                 <TableElement element-type="td">{{ data.name }}</TableElement>
                 <TableElement element-type="td">{{ data.description }}</TableElement>
                 <TableElement element-type="td">{{ data.updated_at }}</TableElement>

@@ -1,37 +1,27 @@
-<template>
+<template xmlns="http://www.w3.org/1999/html">
     <div class="card">
         <header class="card-header">
             <h1 class="card-header-title">
-                Schauspieler Anlegen:
+                Schauspieler anlegen:
             </h1>
         </header>
-        <div class="card-content">
-            <div class="content">
-                <div class="field">
-                    <label class="label">ID</label>
-                    <div class="control">
-                        <input class="input" type="ID" placeholder="ID">
-                    </div>
+        <div class="box px-4 py-4">
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                    <input class="input" type="Name" placeholder="Max Mustermann">
                 </div>
-
+            </div>
+            <div class="field">
+                <label class="label">Beschreibung</label>
                 <div class="field">
-                    <label class="label">Name</label>
-                    <div class="control">
-                        <input class="input" type="Name" placeholder="Max Mustermann">
-                    </div>
+                    <textarea class="textarea" type="Beschreibung" placeholder="Was macht den Schauspieler aus?" rows="4"></textarea>
                 </div>
-                <div class="field">
-                    <label class="label">Beschreibung</label>
-                    <div class="control">
-                        <input class="input" type="Beschreibung" placeholder="Was macht den Schauspieler aus?">
-                    </div>
-                </div>
-
-                <div class="field">
-                    <label class="label">Film ID</label>
-                    <div class="control">
-                        <input class="input" type="Film ID" placeholder="Film ID">
-                    </div>
+            </div>
+            <div class="field">
+                <label class="label">Film ID</label>
+                <div class="control">
+                    <input class="input" type="Film ID" placeholder="Film ID">
                 </div>
             </div>
         </div>
@@ -46,8 +36,7 @@
 import TableElement from "./base/TableComponent";
 export default {
     components: {TableElement},
-//    name: "CreateComponent",
-    props: ['component_title']
+
 
 }
 </script>

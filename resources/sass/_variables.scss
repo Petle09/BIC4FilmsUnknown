@@ -18,14 +18,41 @@ $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
 
-$primary:      hsl(171, 100%, 41%);
+$primary: hsl(0, 0%, 100%);
 $grey-darker:  hsl(0, 0%, 21%);
 $grey-dark:    hsl(0, 0%, 29%);
 $grey:         hsl(0, 0%, 48%);
 $grey-light:   hsl(0, 0%, 71%);
 $grey-lighter: hsl(0, 0%, 86%);
 
-$card-header-background-color: darken($primary, 5%);
+
+// back ground color
+$card-header-background-color: darken(#001CD1FF, 5%);
+$table-background-color: darken( #FFFFFF, 5%);
+$button-color: darken( #001CD1FF, 5%);
+
+//tableHead
+$table-head-background-color: darken(#001CD1FF, 5%);
+$table-head-cell-color:white;
+
+//tableBody
+$table-body-background-color: white;
+$table-color: darken(#001CD1FF, 5%);
+
+//title
+$title-color:white;
+$title-size:size-3;
+
+//navbar
+$navbar-background-color:darken(#001CD1FF, 5%);
+$navbar-tab-active-color:black;
+$navbar-item-color:white;
+$navbar-item-active-color:yellow;
+$navbar-dropdown-background-color:darken( #001CD1FF, 5%);
+
+$link:red;
+
+$card-header-color: #fddf2b;
 $card-header-color: #fff;
 
 $footer-padding: 1rem 2.5rem 2.5rem;

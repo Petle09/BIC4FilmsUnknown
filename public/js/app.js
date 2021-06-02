@@ -1943,23 +1943,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     TableElement: _base_TableComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  //    name: "CreateComponent",
-  props: ['component_title']
+  }
 });
 
 /***/ }),
@@ -1973,15 +1961,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2299,7 +2278,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ActorlistComponent",
@@ -2343,9 +2321,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _base_TableComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./base/TableComponent */ "./resources/js/components/base/TableComponent.vue");
-//
-//
-//
 //
 //
 //
@@ -2467,10 +2442,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _base_TableComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./base/TableComponent */ "./resources/js/components/base/TableComponent.vue");
 /* harmony import */ var _FindActorComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FindActorComponent */ "./resources/js/components/FindActorComponent.vue");
-//
-//
-//
-//
 //
 //
 //
@@ -20404,10 +20375,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CreateActorComponent.vue?vue&type=template&id=5ab0798f&":
-/*!***********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CreateActorComponent.vue?vue&type=template&id=5ab0798f& ***!
-  \***********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CreateActorComponent.vue?vue&type=template&id=5ab0798f&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CreateActorComponent.vue?vue&type=template&id=5ab0798f&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -20442,7 +20413,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("header", { staticClass: "card-header" }, [
       _c("h1", { staticClass: "card-header-title" }, [
-        _vm._v("\n            Schauspieler Anlegen:\n        ")
+        _vm._v("\n            Schauspieler anlegen:\n        ")
       ])
     ])
   },
@@ -20450,53 +20421,41 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-content" }, [
-      _c("div", { staticClass: "content" }, [
-        _c("div", { staticClass: "field" }, [
-          _c("label", { staticClass: "label" }, [_vm._v("ID")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              staticClass: "input",
-              attrs: { type: "ID", placeholder: "ID" }
-            })
-          ])
-        ]),
+    return _c("div", { staticClass: "box px-4 py-4" }, [
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "control" }, [
+          _c("input", {
+            staticClass: "input",
+            attrs: { type: "Name", placeholder: "Max Mustermann" }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Beschreibung")]),
         _vm._v(" "),
         _c("div", { staticClass: "field" }, [
-          _c("label", { staticClass: "label" }, [_vm._v("Name")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              staticClass: "input",
-              attrs: { type: "Name", placeholder: "Max Mustermann" }
-            })
-          ])
-        ]),
+          _c("textarea", {
+            staticClass: "textarea",
+            attrs: {
+              type: "Beschreibung",
+              placeholder: "Was macht den Schauspieler aus?",
+              rows: "4"
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Film ID")]),
         _vm._v(" "),
-        _c("div", { staticClass: "field" }, [
-          _c("label", { staticClass: "label" }, [_vm._v("Beschreibung")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              staticClass: "input",
-              attrs: {
-                type: "Beschreibung",
-                placeholder: "Was macht den Schauspieler aus?"
-              }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "field" }, [
-          _c("label", { staticClass: "label" }, [_vm._v("Film ID")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              staticClass: "input",
-              attrs: { type: "Film ID", placeholder: "Film ID" }
-            })
-          ])
+        _c("div", { staticClass: "control" }, [
+          _c("input", {
+            staticClass: "input",
+            attrs: { type: "Film ID", placeholder: "Film ID" }
+          })
         ])
       ])
     ])
@@ -20508,10 +20467,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CreateMovieComponent.vue?vue&type=template&id=ed8d0798&scoped=true&":
-/*!***********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CreateMovieComponent.vue?vue&type=template&id=ed8d0798&scoped=true& ***!
-  \***********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CreateMovieComponent.vue?vue&type=template&id=ed8d0798&scoped=true&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CreateMovieComponent.vue?vue&type=template&id=ed8d0798&scoped=true&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -20546,7 +20505,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("header", { staticClass: "card-header" }, [
       _c("h1", { staticClass: "card-header-title" }, [
-        _vm._v("\n            Film Anlegen:\n        ")
+        _vm._v("\n            Film anlegen:\n        ")
       ])
     ])
   },
@@ -20554,42 +20513,30 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-content" }, [
-      _c("div", { staticClass: "content" }, [
-        _c("div", { staticClass: "field" }, [
-          _c("label", { staticClass: "label" }, [_vm._v("ID")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              staticClass: "input",
-              attrs: { type: "ID", placeholder: "ID" }
-            })
-          ])
-        ]),
+    return _c("div", { staticClass: "box px-4 py-4" }, [
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "control" }, [
+          _c("input", {
+            staticClass: "input",
+            attrs: { type: "Name", placeholder: "Filmtitel" }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Beschreibung")]),
         _vm._v(" "),
         _c("div", { staticClass: "field" }, [
-          _c("label", { staticClass: "label" }, [_vm._v("Name")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              staticClass: "input",
-              attrs: { type: "Name", placeholder: "Filmtitel" }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "field" }, [
-          _c("label", { staticClass: "label" }, [_vm._v("Beschreibung")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              staticClass: "input",
-              attrs: {
-                type: "Beschreibung",
-                placeholder: "Was macht den Film aus?"
-              }
-            })
-          ])
+          _c("textarea", {
+            staticClass: "textarea",
+            attrs: {
+              type: "Beschreibung",
+              placeholder: "Was macht den Film aus?",
+              rows: "4"
+            }
+          })
         ])
       ])
     ])
@@ -20677,11 +20624,7 @@ var render = function() {
     [
       _c(
         "Table",
-        {
-          staticClass:
-            "table is-5-desktop is-hoverable has-background-primary has-text-black",
-          attrs: { id: "Actors" }
-        },
+        { staticClass: "table is-4-desktop", attrs: { id: "Actors" } },
         [
           _c("thead", [
             _c(
@@ -20777,20 +20720,16 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "table-container is-2-tablet" },
+    { staticClass: "table-container" },
     [
       _c(
         "Table",
-        {
-          staticClass:
-            "table is-5-desktop is-hoverable has-background-primary has-text-black",
-          attrs: { id: "Actors" }
-        },
+        { staticClass: "table", attrs: { id: "Schauspielerliste" } },
         [
-          _c("thead", [
+          _c("thead", { staticClass: "title" }, [
             _c(
               "tr",
-              { staticClass: "title is-7" },
+              { staticClass: "title" },
               [
                 _c("TableElement", { attrs: { "element-type": "th" } }, [
                   _vm._v("ID")
@@ -20801,11 +20740,11 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("Vita")
+                  _vm._v("Beschreibung:")
                 ]),
                 _vm._v(" "),
                 _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("Updated")
+                  _vm._v("Zuletzt geändert:")
                 ]),
                 _vm._v(" "),
                 _c("TableElement", { attrs: { "element-type": "th" } })
@@ -20823,7 +20762,10 @@ var render = function() {
                 [
                   _c("TableElement", { attrs: { "element-type": "td" } }, [
                     _c("a", {
-                      attrs: { href: "/actor/" + data.slug, title: "Edit" },
+                      attrs: {
+                        href: "/actor/" + data.slug,
+                        title: "Bearbeiten"
+                      },
                       domProps: { textContent: _vm._s(data.id) }
                     })
                   ]),
@@ -20880,81 +20822,73 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "table-container is-2-tablet" },
+    { staticClass: "table-container" },
     [
-      _c(
-        "Table",
-        {
-          staticClass:
-            "table is-5-desktop is-hoverable has-background-primary has-text-black",
-          attrs: { id: "invention" }
-        },
-        [
-          _c("thead", [
-            _c(
+      _c("Table", { staticClass: "table", attrs: { id: "Filmliste" } }, [
+        _c("thead", { staticClass: "title" }, [
+          _c(
+            "tr",
+            { staticClass: "title" },
+            [
+              _c("TableElement", { attrs: { "element-type": "th" } }, [
+                _vm._v("ID")
+              ]),
+              _vm._v(" "),
+              _c("TableElement", { attrs: { "element-type": "th" } }, [
+                _vm._v("Name")
+              ]),
+              _vm._v(" "),
+              _c("TableElement", { attrs: { "element-type": "th" } }, [
+                _vm._v("Beschreibung:")
+              ]),
+              _vm._v(" "),
+              _c("TableElement", { attrs: { "element-type": "th" } }, [
+                _vm._v("Zuletzt geändert:")
+              ]),
+              _vm._v(" "),
+              _c("TableElement", { attrs: { "element-type": "th" } })
+            ],
+            1
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.films, function(data) {
+            return _c(
               "tr",
-              { staticClass: "title is-7" },
+              { key: data.id },
               [
-                _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("ID")
+                _c("TableElement", { attrs: { "element-type": "td" } }, [
+                  _c("a", {
+                    attrs: { href: "/data/" + data.slug, title: "Bearbeiten" },
+                    domProps: { textContent: _vm._s(data.id) }
+                  })
                 ]),
                 _vm._v(" "),
-                _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("Name")
+                _c("TableElement", { attrs: { "element-type": "td" } }, [
+                  _vm._v(_vm._s(data.name))
                 ]),
                 _vm._v(" "),
-                _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("Description")
+                _c("TableElement", { attrs: { "element-type": "td" } }, [
+                  _vm._v(_vm._s(data.description))
                 ]),
                 _vm._v(" "),
-                _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("Updated")
+                _c("TableElement", { attrs: { "element-type": "td" } }, [
+                  _vm._v(_vm._s(data.updated_at))
                 ]),
                 _vm._v(" "),
-                _c("TableElement", { attrs: { "element-type": "th" } })
+                _c("TableElement", {
+                  staticStyle: { width: "500px" },
+                  attrs: { "element-type": "td" }
+                })
               ],
               1
             )
-          ]),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            _vm._l(_vm.films, function(data) {
-              return _c(
-                "tr",
-                { key: data.id },
-                [
-                  _c("TableElement", { attrs: { "element-type": "td" } }, [
-                    _c("a", {
-                      attrs: { href: "/data/" + data.slug, title: data.id },
-                      domProps: { textContent: _vm._s(data.id) }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("TableElement", { attrs: { "element-type": "td" } }, [
-                    _vm._v(_vm._s(data.name))
-                  ]),
-                  _vm._v(" "),
-                  _c("TableElement", { attrs: { "element-type": "td" } }, [
-                    _vm._v(_vm._s(data.description))
-                  ]),
-                  _vm._v(" "),
-                  _c("TableElement", { attrs: { "element-type": "td" } }, [
-                    _vm._v(_vm._s(data.updated_at))
-                  ]),
-                  _vm._v(" "),
-                  _c("TableElement", {
-                    staticStyle: { width: "500px" },
-                    attrs: { "element-type": "td" }
-                  })
-                ],
-                1
-              )
-            }),
-            0
-          )
-        ]
-      )
+          }),
+          0
+        )
+      ])
     ],
     1
   )
@@ -21032,7 +20966,7 @@ var render = function() {
             expression: "message"
           }
         ],
-        attrs: { id: "input", placeholder: "Actor????" },
+        attrs: { id: "input", placeholder: "Schauspieler?" },
         domProps: { value: _vm.message },
         on: {
           input: function($event) {
@@ -21046,16 +20980,11 @@ var render = function() {
       _vm._v(" "),
       _c(
         "Table",
-        {
-          staticClass:
-            "table is-5-desktop is-hoverable has-background-primary has-text-black",
-          attrs: { id: "Actors" }
-        },
+        { staticClass: "table", attrs: { id: "Suche Schauspieler" } },
         [
-          _c("thead", [
+          _c("thead", { staticClass: "table" }, [
             _c(
               "tr",
-              { staticClass: "title is-7" },
               [
                 _c("TableElement", { attrs: { "element-type": "th" } }, [
                   _vm._v("ID")
@@ -21066,11 +20995,11 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("Vita")
+                  _vm._v("Beschreibung:")
                 ]),
                 _vm._v(" "),
                 _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("Updated")
+                  _vm._v("Zuletzt geändert:")
                 ]),
                 _vm._v(" "),
                 _c("TableElement", { attrs: { "element-type": "th" } })
@@ -21090,7 +21019,7 @@ var render = function() {
                         _c("a", {
                           attrs: {
                             href: "/actor/" + data.slug,
-                            title: data.id
+                            title: "Bearbeiten"
                           },
                           domProps: { textContent: _vm._s(data.id) }
                         })
@@ -21276,11 +21205,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("header", { staticClass: "card-header" }, [
-      _c(
-        "h1",
-        { staticClass: "card-header-title has-background-info has-text-black" },
-        [_vm._v("\n                Übersicht Schauspieler:\n            ")]
-      )
+      _c("h1", { staticClass: "card-header-title" }, [
+        _vm._v("\n                Übersicht Schauspieler:\n            ")
+      ])
     ])
   }
 ]
@@ -33642,7 +33569,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _CreateActorComponent_vue_vue_type_template_id_5ab0798f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateActorComponent.vue?vue&type=template&id=5ab0798f& */ "./resources/js/components/CreateActorComponent.vue?vue&type=template&id=5ab0798f&");
+/* harmony import */ var _CreateActorComponent_vue_vue_type_template_id_5ab0798f_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateActorComponent.vue?vue&type=template&id=5ab0798f&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml& */ "./resources/js/components/CreateActorComponent.vue?vue&type=template&id=5ab0798f&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml&");
 /* harmony import */ var _CreateActorComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateActorComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/CreateActorComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -33654,8 +33581,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _CreateActorComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _CreateActorComponent_vue_vue_type_template_id_5ab0798f___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _CreateActorComponent_vue_vue_type_template_id_5ab0798f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CreateActorComponent_vue_vue_type_template_id_5ab0798f_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CreateActorComponent_vue_vue_type_template_id_5ab0798f_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -33684,19 +33611,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/CreateActorComponent.vue?vue&type=template&id=5ab0798f&":
-/*!*****************************************************************************************!*\
-  !*** ./resources/js/components/CreateActorComponent.vue?vue&type=template&id=5ab0798f& ***!
-  \*****************************************************************************************/
+/***/ "./resources/js/components/CreateActorComponent.vue?vue&type=template&id=5ab0798f&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml&":
+/*!*************************************************************************************************************************************!*\
+  !*** ./resources/js/components/CreateActorComponent.vue?vue&type=template&id=5ab0798f&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml& ***!
+  \*************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateActorComponent_vue_vue_type_template_id_5ab0798f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CreateActorComponent.vue?vue&type=template&id=5ab0798f& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CreateActorComponent.vue?vue&type=template&id=5ab0798f&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateActorComponent_vue_vue_type_template_id_5ab0798f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateActorComponent_vue_vue_type_template_id_5ab0798f_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CreateActorComponent.vue?vue&type=template&id=5ab0798f&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CreateActorComponent.vue?vue&type=template&id=5ab0798f&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateActorComponent_vue_vue_type_template_id_5ab0798f_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateActorComponent_vue_vue_type_template_id_5ab0798f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateActorComponent_vue_vue_type_template_id_5ab0798f_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -33711,7 +33638,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _CreateMovieComponent_vue_vue_type_template_id_ed8d0798_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateMovieComponent.vue?vue&type=template&id=ed8d0798&scoped=true& */ "./resources/js/components/CreateMovieComponent.vue?vue&type=template&id=ed8d0798&scoped=true&");
+/* harmony import */ var _CreateMovieComponent_vue_vue_type_template_id_ed8d0798_scoped_true_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateMovieComponent.vue?vue&type=template&id=ed8d0798&scoped=true&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml& */ "./resources/js/components/CreateMovieComponent.vue?vue&type=template&id=ed8d0798&scoped=true&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml&");
 /* harmony import */ var _CreateMovieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateMovieComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/CreateMovieComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -33723,8 +33650,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _CreateMovieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _CreateMovieComponent_vue_vue_type_template_id_ed8d0798_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _CreateMovieComponent_vue_vue_type_template_id_ed8d0798_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CreateMovieComponent_vue_vue_type_template_id_ed8d0798_scoped_true_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CreateMovieComponent_vue_vue_type_template_id_ed8d0798_scoped_true_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   "ed8d0798",
@@ -33753,19 +33680,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/CreateMovieComponent.vue?vue&type=template&id=ed8d0798&scoped=true&":
-/*!*****************************************************************************************************!*\
-  !*** ./resources/js/components/CreateMovieComponent.vue?vue&type=template&id=ed8d0798&scoped=true& ***!
-  \*****************************************************************************************************/
+/***/ "./resources/js/components/CreateMovieComponent.vue?vue&type=template&id=ed8d0798&scoped=true&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml&":
+/*!*************************************************************************************************************************************************!*\
+  !*** ./resources/js/components/CreateMovieComponent.vue?vue&type=template&id=ed8d0798&scoped=true&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml& ***!
+  \*************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateMovieComponent_vue_vue_type_template_id_ed8d0798_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CreateMovieComponent.vue?vue&type=template&id=ed8d0798&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CreateMovieComponent.vue?vue&type=template&id=ed8d0798&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateMovieComponent_vue_vue_type_template_id_ed8d0798_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateMovieComponent_vue_vue_type_template_id_ed8d0798_scoped_true_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CreateMovieComponent.vue?vue&type=template&id=ed8d0798&scoped=true&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CreateMovieComponent.vue?vue&type=template&id=ed8d0798&scoped=true&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateMovieComponent_vue_vue_type_template_id_ed8d0798_scoped_true_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateMovieComponent_vue_vue_type_template_id_ed8d0798_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateMovieComponent_vue_vue_type_template_id_ed8d0798_scoped_true_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

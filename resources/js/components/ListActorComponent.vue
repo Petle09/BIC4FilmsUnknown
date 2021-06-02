@@ -1,13 +1,12 @@
 <template>
-    <div class="table-container is-2-tablet">
-
-        <Table id="Actors" class="table is-5-desktop is-hoverable has-background-primary has-text-black">
-            <thead>
-            <tr class="title is-7">
+    <div class="table-container">
+        <Table id="Schauspielerliste" class="table">
+            <thead class="title">
+            <tr class="title">
                 <TableElement element-type="th">ID</TableElement>
                 <TableElement element-type="th">Name</TableElement>
-                <TableElement element-type="th">Vita</TableElement>
-                <TableElement element-type="th">Updated</TableElement>
+                <TableElement element-type="th">Beschreibung:</TableElement>
+                <TableElement element-type="th">Zuletzt geändert:</TableElement>
                 <TableElement element-type="th"></TableElement>
             </tr>
             </thead>
@@ -15,7 +14,7 @@
             <tr v-for="data in actors" :keydata.="id">
                 <TableElement element-type="td">
               <a :href="'/actor/'+data.slug"
-                   :title="'Edit'" v-text="data.id"/>
+                   :title="'Bearbeiten'" v-text="data.id"/>
                 </TableElement>
                 <TableElement element-type="td">{{ data.name }}</TableElement>
                 <TableElement element-type="td">{{ data.description }}</TableElement>

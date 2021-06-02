@@ -1,7 +1,7 @@
 <template>
     <div class="card has-background-grey-light" >
         <header class="card-header">
-            <h1 class="card-header-title has-background-info has-text-black">
+            <h1 class="card-header-title">
                 Übersicht Schauspieler:
             </h1>
         </header>

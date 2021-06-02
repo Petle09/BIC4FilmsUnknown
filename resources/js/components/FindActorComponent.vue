@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <Table id="Actors" class="table is-5-desktop is-hoverable has-background-primary has-text-black">
+        <Table id="Actors" class="table is-4-desktop">
             <thead>
             <tr class="title is-7">
                 <TableElement element-type="th">ID</TableElement>
