@@ -43,7 +43,7 @@
         </div>
         <footer class="card-footer">
             <a href="#" class="card-footer-item">Löschen</a>
-            <a href="#" class="card-footer-item">Bearbeiten</a>
+            <a :href="'/actor/' +actorData.slug+ '/edit'" class="card-footer-item">Bearbeiten</a>
             <a :href="'/actor'" class="card-footer-item">Abbrechen</a>
         </footer>
     </div>

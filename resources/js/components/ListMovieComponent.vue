@@ -19,7 +19,7 @@
                 <TableElement element-type="td">{{ data.name }}</TableElement>
                 <TableElement element-type="td">{{ data.description }}</TableElement>
                 <TableElement element-type="td">{{ data.updated_at }}</TableElement>
-                <TableElement element-type="td" style="width: 500px"></TableElement>
+                <TableElement element-type="td" style="width: 200px"></TableElement>
             </tr>
             </tbody>
         </Table>

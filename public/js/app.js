@@ -1943,10 +1943,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     TableElement: _base_TableComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      actor: {
+        name: null,
+        description: null,
+        film_id: null
+      }
+    };
+  },
+  methods: {
+    anlegen: function anlegen(event) {
+      axios.post('/actor', this.actor);
+    }
   }
 });
 
@@ -1989,8 +2004,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "CreateMovieComponent"
+  name: "CreateMovieComponent",
+  data: function data() {
+    return {
+      film: {
+        name: null,
+        description: null
+      }
+    };
+  },
+  methods: {
+    anlegen: function anlegen(event) {
+      axios.post('/film', this.film);
+    }
+  }
 });
 
 /***/ }),
@@ -2004,7 +2033,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _base_TableComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./base/TableComponent */ "./resources/js/components/base/TableComponent.vue");
 //
 //
 //
@@ -2014,41 +2042,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "EditActorComponent",
-  components: {
-    TableElement: _base_TableComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  props: ['actor'],
-  mounted: function mounted() {
-    this.getList();
-  },
+  props: ['actorData'],
   data: function data() {
     return {
-      actors: [],
-      loading: true,
-      noDomains: false,
-      currentLocation: window.location.pathname,
-      buffer: '',
-      currentSlug: ''
+      actor: {
+        name: this.actorData.name,
+        description: this.actorData.description,
+        film_id: this.actorData.film_id
+      }
     };
   },
   methods: {
-    getList: function getList() {
-      var _this = this;
-
-      this.buffer = this.currentLocation.split('/');
-      this.currentSlug = this.buffer[this.buffer.length - 2];
-      axios.post('/search/actor/', {
-        'q': this.currentSlug
-      }) //axios.get('/actor/'+this.currentSlug)
-      .then(function (response) {
-        _this.actors = response.data;
-        console.log(response);
-        _this.loading = false;
-        if (_this.loading) _this.noDomains = true;
-      });
+    update: function update(event) {
+      axios.put('/actor/' + this.actorData.slug, this.actor);
     }
   }
 });
@@ -20424,16 +20458,112 @@ var render = function() {
   return _c("div", { staticClass: "card" }, [
     _vm._m(0),
     _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
-    _c("footer", { staticClass: "card-footer" }, [
-      _c("a", { staticClass: "card-footer-item", attrs: { href: "/actor" } }, [
-        _vm._v("Anlegen")
+    _c("div", { staticClass: "box px-4 py-4" }, [
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.actor.name,
+                expression: "actor.name"
+              }
+            ],
+            staticClass: "input",
+            attrs: { type: "Name", placeholder: "Max Mustermann" },
+            domProps: { value: _vm.actor.name },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.actor, "name", $event.target.value)
+              }
+            }
+          })
+        ])
       ]),
       _vm._v(" "),
-      _c("a", { staticClass: "card-footer-item", attrs: { href: "/home" } }, [
-        _vm._v("Abbrechen")
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Beschreibung")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.actor.description,
+                expression: "actor.description"
+              }
+            ],
+            staticClass: "textarea input",
+            attrs: {
+              type: "Beschreibung",
+              placeholder: "Was macht den Schauspieler aus?",
+              rows: "4"
+            },
+            domProps: { value: _vm.actor.description },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.actor, "description", $event.target.value)
+              }
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Film ID")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.actor.film_id,
+                expression: "actor.film_id"
+              }
+            ],
+            staticClass: "input",
+            attrs: { type: "Film ID", placeholder: "Film ID" },
+            domProps: { value: _vm.actor.film_id },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.actor, "film_id", $event.target.value)
+              }
+            }
+          })
+        ])
       ])
+    ]),
+    _vm._v(" "),
+    _c("footer", { staticClass: "card-footer" }, [
+      _c(
+        "a",
+        {
+          staticClass: "button card-footer-item",
+          attrs: { href: "/actor" },
+          on: { click: _vm.anlegen }
+        },
+        [_vm._v("Anlegen")]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        { staticClass: "button card-footer-item", attrs: { href: "/home" } },
+        [_vm._v("Abbrechen")]
+      )
     ])
   ])
 }
@@ -20445,49 +20575,6 @@ var staticRenderFns = [
     return _c("header", { staticClass: "card-header" }, [
       _c("h1", { staticClass: "card-header-title" }, [
         _vm._v("\n            Schauspieler anlegen:\n        ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "box px-4 py-4" }, [
-      _c("div", { staticClass: "field" }, [
-        _c("label", { staticClass: "label" }, [_vm._v("Name")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "field" }, [
-          _c("input", {
-            staticClass: "input",
-            attrs: { type: "Name", placeholder: "Max Mustermann" }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "field" }, [
-        _c("label", { staticClass: "label" }, [_vm._v("Beschreibung")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "field" }, [
-          _c("textarea", {
-            staticClass: "textarea",
-            attrs: {
-              type: "Beschreibung",
-              placeholder: "Was macht den Schauspieler aus?",
-              rows: "4"
-            }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "field" }, [
-        _c("label", { staticClass: "label" }, [_vm._v("Film ID")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "field" }, [
-          _c("input", {
-            staticClass: "input",
-            attrs: { type: "Film ID", placeholder: "Film ID" }
-          })
-        ])
       ])
     ])
   }
@@ -20516,16 +20603,84 @@ var render = function() {
   return _c("div", { staticClass: "card" }, [
     _vm._m(0),
     _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
-    _c("footer", { staticClass: "card-footer" }, [
-      _c("a", { staticClass: "card-footer-item", attrs: { href: "/film" } }, [
-        _vm._v("Anlegen")
+    _c("div", { staticClass: "box px-4 py-4" }, [
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.film.name,
+                expression: "film.name"
+              }
+            ],
+            staticClass: "input",
+            attrs: { type: "Name", placeholder: "Filmtitel" },
+            domProps: { value: _vm.film.name },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.film, "name", $event.target.value)
+              }
+            }
+          })
+        ])
       ]),
       _vm._v(" "),
-      _c("a", { staticClass: "card-footer-item", attrs: { href: "/home" } }, [
-        _vm._v("Abbrechen")
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Beschreibung")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.film.description,
+                expression: "film.description"
+              }
+            ],
+            staticClass: "textarea input",
+            attrs: {
+              type: "Beschreibung",
+              placeholder: "Was macht den Film aus?",
+              rows: "4"
+            },
+            domProps: { value: _vm.film.description },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.film, "description", $event.target.value)
+              }
+            }
+          })
+        ])
       ])
+    ]),
+    _vm._v(" "),
+    _c("footer", { staticClass: "card-footer" }, [
+      _c(
+        "a",
+        {
+          staticClass: "button card-footer-item",
+          attrs: { href: "/film" },
+          on: { click: _vm.anlegen }
+        },
+        [_vm._v("Anlegen")]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        { staticClass: "button card-footer-item", attrs: { href: "/home" } },
+        [_vm._v("Abbrechen")]
+      )
     ])
   ])
 }
@@ -20539,38 +20694,6 @@ var staticRenderFns = [
         _vm._v("\n            Film anlegen:\n        ")
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "box px-4 py-4" }, [
-      _c("div", { staticClass: "field" }, [
-        _c("label", { staticClass: "label" }, [_vm._v("Name")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "field" }, [
-          _c("input", {
-            staticClass: "input",
-            attrs: { type: "Name", placeholder: "Filmtitel" }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "field" }, [
-        _c("label", { staticClass: "label" }, [_vm._v("Beschreibung")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "field" }, [
-          _c("textarea", {
-            staticClass: "textarea",
-            attrs: {
-              type: "Beschreibung",
-              placeholder: "Was macht den Film aus?",
-              rows: "4"
-            }
-          })
-        ])
-      ])
-    ])
   }
 ]
 render._withStripped = true
@@ -20579,10 +20702,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditActorComponent.vue?vue&type=template&id=3143d7dd&scoped=true&":
-/*!*********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EditActorComponent.vue?vue&type=template&id=3143d7dd&scoped=true& ***!
-  \*********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditActorComponent.vue?vue&type=template&id=3143d7dd&scoped=true&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EditActorComponent.vue?vue&type=template&id=3143d7dd&scoped=true&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -20594,17 +20717,126 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._v(
-      "\n\n    " +
-        _vm._s(_vm.actor) +
-        "\n    " +
-        _vm._s(_vm.currentSlug) +
-        "\n\n"
-    )
+  return _c("div", { staticClass: "card" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "box px-4 py-4" }, [
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.actor.name,
+                expression: "actor.name"
+              }
+            ],
+            staticClass: "input",
+            attrs: { type: "Name" },
+            domProps: { value: _vm.actor.name },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.actor, "name", $event.target.value)
+              }
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Beschreibung")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.actor.description,
+                expression: "actor.description"
+              }
+            ],
+            staticClass: "textarea input",
+            attrs: { type: "Beschreibung", rows: "4" },
+            domProps: { value: _vm.actor.description },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.actor, "description", $event.target.value)
+              }
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("label", { staticClass: "label" }, [_vm._v("Film ID")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.actor.film_id,
+                expression: "actor.film_id"
+              }
+            ],
+            staticClass: "input",
+            attrs: { type: "Film ID" },
+            domProps: { value: _vm.actor.film_id },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.actor, "film_id", $event.target.value)
+              }
+            }
+          })
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("footer", { staticClass: "card-footer" }, [
+      _c(
+        "a",
+        {
+          staticClass: "button card-footer-item",
+          attrs: { href: "/actor" },
+          on: { click: _vm.update }
+        },
+        [_vm._v("Anlegen")]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        { staticClass: "button card-footer-item", attrs: { href: "/home" } },
+        [_vm._v("Abbrechen")]
+      )
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("header", { staticClass: "card-header" }, [
+      _c("h1", { staticClass: "card-header-title" }, [
+        _vm._v("\n            Schauspieler anlegen:\n        ")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -20711,7 +20943,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("TableElement", {
-                        staticStyle: { width: "500px" },
+                        staticStyle: { width: "200px" },
                         attrs: { "element-type": "td" }
                       })
                     ],
@@ -20910,7 +21142,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("TableElement", {
-                  staticStyle: { width: "500px" },
+                  staticStyle: { width: "200px" },
                   attrs: { "element-type": "td" }
                 })
               ],
@@ -21069,7 +21301,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("TableElement", {
-                        staticStyle: { width: "500px" },
+                        staticStyle: { width: "200px" },
                         attrs: { "element-type": "td" }
                       })
                     ],
@@ -21205,9 +21437,14 @@ var render = function() {
         _vm._v("Löschen")
       ]),
       _vm._v(" "),
-      _c("a", { staticClass: "card-footer-item", attrs: { href: "#" } }, [
-        _vm._v("Bearbeiten")
-      ]),
+      _c(
+        "a",
+        {
+          staticClass: "card-footer-item",
+          attrs: { href: "/actor/" + _vm.actorData.slug + "/edit" }
+        },
+        [_vm._v("Bearbeiten")]
+      ),
       _vm._v(" "),
       _c("a", { staticClass: "card-footer-item", attrs: { href: "/actor" } }, [
         _vm._v("Abbrechen")
@@ -33851,7 +34088,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _EditActorComponent_vue_vue_type_template_id_3143d7dd_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EditActorComponent.vue?vue&type=template&id=3143d7dd&scoped=true& */ "./resources/js/components/EditActorComponent.vue?vue&type=template&id=3143d7dd&scoped=true&");
+/* harmony import */ var _EditActorComponent_vue_vue_type_template_id_3143d7dd_scoped_true_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EditActorComponent.vue?vue&type=template&id=3143d7dd&scoped=true&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml& */ "./resources/js/components/EditActorComponent.vue?vue&type=template&id=3143d7dd&scoped=true&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml&");
 /* harmony import */ var _EditActorComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EditActorComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/EditActorComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -33863,8 +34100,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _EditActorComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _EditActorComponent_vue_vue_type_template_id_3143d7dd_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _EditActorComponent_vue_vue_type_template_id_3143d7dd_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _EditActorComponent_vue_vue_type_template_id_3143d7dd_scoped_true_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _EditActorComponent_vue_vue_type_template_id_3143d7dd_scoped_true_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   "3143d7dd",
@@ -33893,19 +34130,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/EditActorComponent.vue?vue&type=template&id=3143d7dd&scoped=true&":
-/*!***************************************************************************************************!*\
-  !*** ./resources/js/components/EditActorComponent.vue?vue&type=template&id=3143d7dd&scoped=true& ***!
-  \***************************************************************************************************/
+/***/ "./resources/js/components/EditActorComponent.vue?vue&type=template&id=3143d7dd&scoped=true&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml&":
+/*!***********************************************************************************************************************************************!*\
+  !*** ./resources/js/components/EditActorComponent.vue?vue&type=template&id=3143d7dd&scoped=true&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml& ***!
+  \***********************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditActorComponent_vue_vue_type_template_id_3143d7dd_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./EditActorComponent.vue?vue&type=template&id=3143d7dd&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditActorComponent.vue?vue&type=template&id=3143d7dd&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditActorComponent_vue_vue_type_template_id_3143d7dd_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditActorComponent_vue_vue_type_template_id_3143d7dd_scoped_true_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./EditActorComponent.vue?vue&type=template&id=3143d7dd&scoped=true&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditActorComponent.vue?vue&type=template&id=3143d7dd&scoped=true&xmlns=http%3A%2F%2Fwww.w3.org%2F1999%2Fhtml&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditActorComponent_vue_vue_type_template_id_3143d7dd_scoped_true_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditActorComponent_vue_vue_type_template_id_3143d7dd_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditActorComponent_vue_vue_type_template_id_3143d7dd_scoped_true_xmlns_http_3A_2F_2Fwww_w3_org_2F1999_2Fhtml___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -34831,8 +35068,8 @@ var Form = /*#__PURE__*/function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\chris\PhpstormProjects\BIC4FilmsUnknown\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\chris\PhpstormProjects\BIC4FilmsUnknown\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Zauna\PhpstormProjects\BIC4FilmsUnknown\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Zauna\PhpstormProjects\BIC4FilmsUnknown\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

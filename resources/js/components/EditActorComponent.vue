@@ -1,49 +1,55 @@
-<template>
-    <div>
-
-        {{ actor }}
-        {{currentSlug}}
-
+<template xmlns="http://www.w3.org/1999/html">
+    <div class="card">
+        <header class="card-header">
+            <h1 class="card-header-title">
+                Schauspieler anlegen:
+            </h1>
+        </header>
+        <div class="box px-4 py-4">
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="field">
+                    <input class="input" type="Name" v-model="actor.name">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Beschreibung</label>
+                <div class="field">
+                    <textarea class="textarea input" type="Beschreibung" v-model="actor.description"
+                              rows="4"></textarea>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Film ID</label>
+                <div class="field">
+                    <input class="input" type="Film ID" v-model="actor.film_id">
+                </div>
+            </div>
+        </div>
+        <footer class="card-footer">
+            <a :href="'/actor'" v-on:click="update" class="button card-footer-item">Anlegen</a>
+            <a :href="'/home'" class="button card-footer-item">Abbrechen</a>
+        </footer>
     </div>
 </template>
 
 <script>
-import TableElement from "./base/TableComponent";
+
 
 export default {
     name: "EditActorComponent",
-    components: {
-        TableElement,
-    },
-    props: ['actor'],
-    mounted() {
-        this.getList();
-    },
+    props: ['actorData'],
+
     data() {
         return {
-            actors: [],
-            loading: true,
-            noDomains: false,
-            currentLocation: window.location.pathname,
-            buffer: '',
-            currentSlug:'',
+            actor: { name: this.actorData.name,
+                description: this.actorData.description, film_id: this.actorData.film_id },
         }
     },
     methods: {
-        getList() {
-            this.buffer = this.currentLocation.split('/');
-            this.currentSlug = this.buffer[this.buffer.length -2];
-            axios.post('/search/actor/',{'q': this.currentSlug})
-            //axios.get('/actor/'+this.currentSlug)
-                .then(response => {
-                    this.actors = response.data;
-                    console.log(response);
-                    this.loading = false;
-                    if (this.loading)
-                        this.noDomains = true;
-                });
+        update:function (event) {
+            axios.put('/actor/'+this.actorData.slug , this.actor)
         },
-
     }
 }
 </script>
