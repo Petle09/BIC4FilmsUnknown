@@ -14,7 +14,7 @@
             <tr v-for="data in films" :key="data.id">
 
                 <TableElement element-type="td">
-                    <a :href="'/data/' + data.slug"
+                    <a :href="'/film/' + data.slug"
                        :title="'Bearbeiten'" v-text="data.id"/></TableElement>
                 <TableElement element-type="td">{{ data.name }}</TableElement>
                 <TableElement element-type="td">{{ data.description }}</TableElement>

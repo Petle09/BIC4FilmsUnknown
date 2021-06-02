@@ -2573,6 +2573,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "ShowActorComponent",
+  props: ['actorData']
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ShowMovieComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ShowMovieComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2604,8 +2635,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "ShowActorComponent",
-  props: ['actorData']
+  name: "ShowMovieComponent",
+  props: ['movieData']
 });
 
 /***/ }),
@@ -20425,7 +20456,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "field" }, [
         _c("label", { staticClass: "label" }, [_vm._v("Name")]),
         _vm._v(" "),
-        _c("div", { staticClass: "control" }, [
+        _c("div", { staticClass: "field" }, [
           _c("input", {
             staticClass: "input",
             attrs: { type: "Name", placeholder: "Max Mustermann" }
@@ -20451,7 +20482,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "field" }, [
         _c("label", { staticClass: "label" }, [_vm._v("Film ID")]),
         _vm._v(" "),
-        _c("div", { staticClass: "control" }, [
+        _c("div", { staticClass: "field" }, [
           _c("input", {
             staticClass: "input",
             attrs: { type: "Film ID", placeholder: "Film ID" }
@@ -20517,7 +20548,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "field" }, [
         _c("label", { staticClass: "label" }, [_vm._v("Name")]),
         _vm._v(" "),
-        _c("div", { staticClass: "control" }, [
+        _c("div", { staticClass: "field" }, [
           _c("input", {
             staticClass: "input",
             attrs: { type: "Name", placeholder: "Filmtitel" }
@@ -20861,7 +20892,7 @@ var render = function() {
               [
                 _c("TableElement", { attrs: { "element-type": "td" } }, [
                   _c("a", {
-                    attrs: { href: "/data/" + data.slug, title: "Bearbeiten" },
+                    attrs: { href: "/film/" + data.slug, title: "Bearbeiten" },
                     domProps: { textContent: _vm._s(data.id) }
                   })
                 ]),
@@ -21135,7 +21166,7 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "field" }, [
       _c("label", { staticClass: "label" }, [
-        _vm._v("Schauspieler erstellt am:")
+        _vm._v("Schauspieler hinzugefügt am:")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "control" }, [
@@ -21143,7 +21174,7 @@ var render = function() {
           staticClass: "input",
           attrs: {
             type: "ID",
-            placeholder: "Schauspieler erstellt am",
+            placeholder: "Schauspieler hinzugefügt am",
             readonly: ""
           },
           domProps: { value: _vm.actorData.created_at }
@@ -21170,32 +21201,17 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("footer", { staticClass: "card-footer" }, [
-      _c(
-        "a",
-        {
-          staticClass: "card-footer-item has-text-black has-background-danger",
-          attrs: { href: "#" }
-        },
-        [_vm._v("Löschen")]
-      ),
+      _c("a", { staticClass: "card-footer-item", attrs: { href: "#" } }, [
+        _vm._v("Löschen")
+      ]),
       _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "card-footer-item has-text-black has-background-warning",
-          attrs: { href: "#" }
-        },
-        [_vm._v("Bearbeiten")]
-      ),
+      _c("a", { staticClass: "card-footer-item", attrs: { href: "#" } }, [
+        _vm._v("Bearbeiten")
+      ]),
       _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "card-footer-item has-text-black has-background-success",
-          attrs: { href: "/actor" }
-        },
-        [_vm._v("Abbrechen")]
-      )
+      _c("a", { staticClass: "card-footer-item", attrs: { href: "/actor" } }, [
+        _vm._v("Abbrechen")
+      ])
     ])
   ])
 }
@@ -21206,7 +21222,134 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("header", { staticClass: "card-header" }, [
       _c("h1", { staticClass: "card-header-title" }, [
-        _vm._v("\n                Übersicht Schauspieler:\n            ")
+        _vm._v("\n            Übersicht Schauspieler:\n        ")
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ShowMovieComponent.vue?vue&type=template&id=7769de96&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ShowMovieComponent.vue?vue&type=template&id=7769de96&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "card has-background-grey-light" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "field" }, [
+      _c("label", { staticClass: "label" }, [_vm._v("ID:")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("input", {
+          staticClass: "input",
+          attrs: { type: "ID", placeholder: "ID", readonly: "" },
+          domProps: { value: _vm.movieData.id }
+        })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "field" }, [
+      _c("label", { staticClass: "label" }, [_vm._v("Name:")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("input", {
+          staticClass: "input",
+          attrs: { type: "ID", placeholder: "Name", readonly: "" },
+          domProps: { value: _vm.movieData.name }
+        })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "field" }, [
+      _c("label", { staticClass: "label" }, [
+        _vm._v("Beschreibung des Films:")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("input", {
+          staticClass: "input",
+          attrs: {
+            type: "ID",
+            placeholder: "Beschreibung des Films",
+            readonly: ""
+          },
+          domProps: { value: _vm.movieData.description }
+        })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "field" }, [
+      _c("label", { staticClass: "label" }, [_vm._v("Film hinzugefügt am:")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("input", {
+          staticClass: "input",
+          attrs: {
+            type: "ID",
+            placeholder: "Film hinzugefügt am",
+            readonly: ""
+          },
+          domProps: { value: _vm.movieData.created_at }
+        })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "field" }, [
+      _c("label", { staticClass: "label" }, [
+        _vm._v("Film zuletzt geändert am:")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c("input", {
+          staticClass: "input",
+          attrs: {
+            type: "ID",
+            placeholder: "Film zuletzt geändert am",
+            readonly: ""
+          },
+          domProps: { value: _vm.movieData.updated_at }
+        })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("footer", { staticClass: "card-footer" }, [
+      _c("a", { staticClass: "card-footer-item", attrs: { href: "#" } }, [
+        _vm._v("Löschen")
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "card-footer-item", attrs: { href: "#" } }, [
+        _vm._v("Bearbeiten")
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "card-footer-item", attrs: { href: "/actor" } }, [
+        _vm._v("Abbrechen")
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("header", { staticClass: "card-header" }, [
+      _c("h1", { staticClass: "card-header-title" }, [
+        _vm._v("\n            Übersicht Film:\n        ")
       ])
     ])
   }
@@ -33487,6 +33630,7 @@ Vue.component('editActor', __webpack_require__(/*! ./components/EditActorCompone
 Vue.component('createActor', __webpack_require__(/*! ./components/CreateActorComponent.vue */ "./resources/js/components/CreateActorComponent.vue")["default"]);
 Vue.component('createMovie', __webpack_require__(/*! ./components/CreateMovieComponent.vue */ "./resources/js/components/CreateMovieComponent.vue")["default"]);
 Vue.component('showActor', __webpack_require__(/*! ./components/ShowActorComponent.vue */ "./resources/js/components/ShowActorComponent.vue")["default"]);
+Vue.component('showMovie', __webpack_require__(/*! ./components/ShowMovieComponent.vue */ "./resources/js/components/ShowMovieComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -34245,6 +34389,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowActorComponent_vue_vue_type_template_id_d47be3e0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowActorComponent_vue_vue_type_template_id_d47be3e0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/ShowMovieComponent.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/components/ShowMovieComponent.vue ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ShowMovieComponent_vue_vue_type_template_id_7769de96_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ShowMovieComponent.vue?vue&type=template&id=7769de96&scoped=true& */ "./resources/js/components/ShowMovieComponent.vue?vue&type=template&id=7769de96&scoped=true&");
+/* harmony import */ var _ShowMovieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ShowMovieComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ShowMovieComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ShowMovieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ShowMovieComponent_vue_vue_type_template_id_7769de96_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ShowMovieComponent_vue_vue_type_template_id_7769de96_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "7769de96",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ShowMovieComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/ShowMovieComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/ShowMovieComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowMovieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ShowMovieComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ShowMovieComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowMovieComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ShowMovieComponent.vue?vue&type=template&id=7769de96&scoped=true&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/components/ShowMovieComponent.vue?vue&type=template&id=7769de96&scoped=true& ***!
+  \***************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowMovieComponent_vue_vue_type_template_id_7769de96_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ShowMovieComponent.vue?vue&type=template&id=7769de96&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ShowMovieComponent.vue?vue&type=template&id=7769de96&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowMovieComponent_vue_vue_type_template_id_7769de96_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowMovieComponent_vue_vue_type_template_id_7769de96_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
