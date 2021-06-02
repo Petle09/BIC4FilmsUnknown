@@ -2557,8 +2557,84 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "ShowActorComponent"
+  name: "ShowActorComponent",
+  props: ['actorData']
 });
 
 /***/ }),
@@ -21071,9 +21147,143 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", { staticClass: "card has-background-grey-light" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "field" }, [
+      _c("label", { staticClass: "label" }, [_vm._v("ID:")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "control" }, [
+        _c("input", {
+          staticClass: "input",
+          attrs: { type: "ID", placeholder: "ID", readonly: "" },
+          domProps: { value: _vm.actorData.id }
+        })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "field" }, [
+      _c("label", { staticClass: "label" }, [_vm._v("Name:")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "control" }, [
+        _c("input", {
+          staticClass: "input",
+          attrs: { type: "ID", placeholder: "Name", readonly: "" },
+          domProps: { value: _vm.actorData.name }
+        })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "field" }, [
+      _c("label", { staticClass: "label" }, [
+        _vm._v("Beschreibung des Schauspielers:")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "control" }, [
+        _c("input", {
+          staticClass: "input",
+          attrs: {
+            type: "ID",
+            placeholder: "Beschreibung des Schauspielers",
+            readonly: ""
+          },
+          domProps: { value: _vm.actorData.description }
+        })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "field" }, [
+      _c("label", { staticClass: "label" }, [_vm._v("Film ID:")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "control" }, [
+        _c("input", {
+          staticClass: "input",
+          attrs: { type: "ID", placeholder: "Film ID", readonly: "" },
+          domProps: { value: _vm.actorData.film_id }
+        })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "field" }, [
+      _c("label", { staticClass: "label" }, [
+        _vm._v("Schauspieler erstellt am:")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "control" }, [
+        _c("input", {
+          staticClass: "input",
+          attrs: {
+            type: "ID",
+            placeholder: "Schauspieler erstellt am",
+            readonly: ""
+          },
+          domProps: { value: _vm.actorData.created_at }
+        })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "field" }, [
+      _c("label", { staticClass: "label" }, [
+        _vm._v("Schauspieler zuletzt geändert am:")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "control" }, [
+        _c("input", {
+          staticClass: "input",
+          attrs: {
+            type: "ID",
+            placeholder: "Schauspieler zuletzt geändert am",
+            readonly: ""
+          },
+          domProps: { value: _vm.actorData.updated_at }
+        })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("footer", { staticClass: "card-footer" }, [
+      _c(
+        "a",
+        {
+          staticClass: "card-footer-item has-text-black has-background-danger",
+          attrs: { href: "#" }
+        },
+        [_vm._v("Löschen")]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "card-footer-item has-text-black has-background-warning",
+          attrs: { href: "#" }
+        },
+        [_vm._v("Bearbeiten")]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "card-footer-item has-text-black has-background-success",
+          attrs: { href: "/actor" }
+        },
+        [_vm._v("Abbrechen")]
+      )
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("header", { staticClass: "card-header" }, [
+      _c(
+        "h1",
+        { staticClass: "card-header-title has-background-info has-text-black" },
+        [_vm._v("\n                Übersicht Schauspieler:\n            ")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
