@@ -6,6 +6,7 @@
                 <TableElement element-type="th">ID</TableElement>
                 <TableElement element-type="th">Name</TableElement>
                 <TableElement element-type="th">Beschreibung:</TableElement>
+                <TableElement element-type="th">Film ID:</TableElement>
                 <TableElement element-type="th">Zuletzt geändert:</TableElement>
                 <TableElement element-type="th"></TableElement>
             </tr>
@@ -18,6 +19,7 @@
                 </TableElement>
                 <TableElement element-type="td">{{ data.name }}</TableElement>
                 <TableElement element-type="td">{{ data.description }}</TableElement>
+                <TableElement element-type="td">{{ data.film_id }}</TableElement>
                 <TableElement element-type="td">{{ data.updated_at }}</TableElement>
                 <TableElement element-type="td" style="width: 200px"></TableElement>
             </tr>

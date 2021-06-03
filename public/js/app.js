@@ -2312,6 +2312,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ActorlistComponent",
@@ -20502,7 +20504,6 @@ var render = function() {
             ],
             staticClass: "textarea input",
             attrs: {
-              type: "Beschreibung",
               placeholder: "Was macht den Schauspieler aus?",
               rows: "4"
             },
@@ -21007,6 +21008,10 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("TableElement", { attrs: { "element-type": "th" } }, [
+                  _vm._v("Film ID:")
+                ]),
+                _vm._v(" "),
+                _c("TableElement", { attrs: { "element-type": "th" } }, [
                   _vm._v("Zuletzt geändert:")
                 ]),
                 _vm._v(" "),
@@ -21039,6 +21044,10 @@ var render = function() {
                   _vm._v(" "),
                   _c("TableElement", { attrs: { "element-type": "td" } }, [
                     _vm._v(_vm._s(data.description))
+                  ]),
+                  _vm._v(" "),
+                  _c("TableElement", { attrs: { "element-type": "td" } }, [
+                    _vm._v(_vm._s(data.film_id))
                   ]),
                   _vm._v(" "),
                   _c("TableElement", { attrs: { "element-type": "td" } }, [
@@ -21297,7 +21306,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("TableElement", { attrs: { "element-type": "td" } }, [
-                        _vm._v(_vm._s(data.updated_at))
+                        _vm._v(_vm._s(_vm._f("")(data.updated_at)))
                       ]),
                       _vm._v(" "),
                       _c("TableElement", {
