@@ -15,7 +15,7 @@
             <div class="field">
                 <label class="label">Beschreibung</label>
                 <div class="field">
-                    <textarea class="textarea input"  v-model="actor.description"
+                    <textarea class="textarea input" v-model="actor.description"
                               placeholder="Was macht den Schauspieler aus?" rows="4"></textarea>
                 </div>
             </div>

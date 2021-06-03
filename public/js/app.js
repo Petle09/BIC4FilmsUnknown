@@ -2611,7 +2611,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ShowActorComponent",
-  props: ['actorData']
+  props: ['actorData'],
+  methods: {
+    entfernen: function entfernen(event) {
+      axios["delete"]('/actor/' + this.actorData.slug);
+    }
+  }
 });
 
 /***/ }),
@@ -20815,12 +20820,12 @@ var render = function() {
           attrs: { href: "/actor" },
           on: { click: _vm.update }
         },
-        [_vm._v("Anlegen")]
+        [_vm._v("Bearbeiten")]
       ),
       _vm._v(" "),
       _c(
         "a",
-        { staticClass: "button card-footer-item", attrs: { href: "/home" } },
+        { staticClass: "button card-footer-item", attrs: { href: "/actor" } },
         [_vm._v("Abbrechen")]
       )
     ])
@@ -21023,10 +21028,11 @@ var render = function() {
           _vm._v(" "),
           _c(
             "tbody",
+            { staticClass: "table is-bordered is is-striped" },
             _vm._l(_vm.actors, function(data) {
               return _c(
                 "tr",
-                { attrs: { "keydata.": _vm.id } },
+                { attrs: { "keydata.": data.id } },
                 [
                   _c("TableElement", { attrs: { "element-type": "td" } }, [
                     _c("a", {
@@ -21046,12 +21052,27 @@ var render = function() {
                     _vm._v(_vm._s(data.description))
                   ]),
                   _vm._v(" "),
-                  _c("TableElement", { attrs: { "element-type": "td" } }, [
-                    _vm._v(_vm._s(data.film_id))
-                  ]),
+                  _c(
+                    "TableElement",
+                    {
+                      attrs: {
+                        width: "100",
+                        "text-class": "has-text-centered",
+                        "element-type": "td"
+                      }
+                    },
+                    [_vm._v(_vm._s(data.film_id))]
+                  ),
                   _vm._v(" "),
                   _c("TableElement", { attrs: { "element-type": "td" } }, [
-                    _vm._v(_vm._s(data.updated_at))
+                    _vm._v(
+                      _vm._s(
+                        data.updated_at.substring(
+                          0,
+                          data.updated_at.indexOf(".")
+                        )
+                      )
+                    )
                   ]),
                   _vm._v(" "),
                   _c("TableElement", {
@@ -21126,6 +21147,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "tbody",
+          { staticClass: "table is-bordered is is-striped" },
           _vm._l(_vm.films, function(data) {
             return _c(
               "tr",
@@ -21147,7 +21169,11 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("TableElement", { attrs: { "element-type": "td" } }, [
-                  _vm._v(_vm._s(data.updated_at))
+                  _vm._v(
+                    _vm._s(
+                      data.updated_at.substring(0, data.updated_at.indexOf("."))
+                    )
+                  )
                 ]),
                 _vm._v(" "),
                 _c("TableElement", {
@@ -21271,6 +21297,10 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("TableElement", { attrs: { "element-type": "th" } }, [
+                  _vm._v("Film ID:")
+                ]),
+                _vm._v(" "),
+                _c("TableElement", { attrs: { "element-type": "th" } }, [
                   _vm._v("Zuletzt geändert:")
                 ]),
                 _vm._v(" "),
@@ -21282,6 +21312,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "tbody",
+            { staticClass: "table is-bordered is is-striped" },
             _vm._l(_vm.actors, function(data) {
               return data.name.toLowerCase().includes(_vm.message.toLowerCase())
                 ? _c(
@@ -21305,8 +21336,27 @@ var render = function() {
                         _vm._v(_vm._s(data.description))
                       ]),
                       _vm._v(" "),
+                      _c(
+                        "TableElement",
+                        {
+                          attrs: {
+                            width: "100",
+                            "text-class": "has-text-centered",
+                            "element-type": "td"
+                          }
+                        },
+                        [_vm._v(_vm._s(data.film_id))]
+                      ),
+                      _vm._v(" "),
                       _c("TableElement", { attrs: { "element-type": "td" } }, [
-                        _vm._v(_vm._s(_vm._f("")(data.updated_at)))
+                        _vm._v(
+                          _vm._s(
+                            data.updated_at.substring(
+                              0,
+                              data.updated_at.indexOf(".")
+                            )
+                          )
+                        )
                       ]),
                       _vm._v(" "),
                       _c("TableElement", {
@@ -21442,9 +21492,15 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("footer", { staticClass: "card-footer" }, [
-      _c("a", { staticClass: "card-footer-item", attrs: { href: "#" } }, [
-        _vm._v("Löschen")
-      ]),
+      _c(
+        "a",
+        {
+          staticClass: "button card-footer-item",
+          attrs: { href: "/actor" },
+          on: { click: _vm.entfernen }
+        },
+        [_vm._v("Löschen")]
+      ),
       _vm._v(" "),
       _c(
         "a",
@@ -35077,8 +35133,8 @@ var Form = /*#__PURE__*/function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Zauna\PhpstormProjects\BIC4FilmsUnknown\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Zauna\PhpstormProjects\BIC4FilmsUnknown\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\chris\PhpstormProjects\BIC4FilmsUnknown\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\chris\PhpstormProjects\BIC4FilmsUnknown\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

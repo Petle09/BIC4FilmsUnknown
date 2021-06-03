@@ -4135,7 +4135,7 @@ fieldset[disabled] .button {
 }
 
 .table.is-striped tbody tr:not(.is-selected):nth-child(even) {
-  background-color: #fafafa;
+  background-color: grey;
 }
 
 .table-container {

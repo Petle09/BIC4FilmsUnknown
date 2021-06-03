@@ -27,8 +27,8 @@
             </div>
         </div>
         <footer class="card-footer">
-            <a :href="'/actor'" v-on:click="update" class="button card-footer-item">Anlegen</a>
-            <a :href="'/home'" class="button card-footer-item">Abbrechen</a>
+            <a :href="'/actor'" v-on:click="update" class="button card-footer-item">Bearbeiten</a>
+            <a :href="'/actor'" class="button card-footer-item">Abbrechen</a>
         </footer>
     </div>
 </template>

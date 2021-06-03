@@ -42,7 +42,7 @@
             </div>
         </div>
         <footer class="card-footer">
-            <a href="#" class="card-footer-item">Löschen</a>
+            <a :href="'/actor'" v-on:click="entfernen" class="button card-footer-item">Löschen</a>
             <a :href="'/actor/' +actorData.slug+ '/edit'" class="card-footer-item">Bearbeiten</a>
             <a :href="'/actor'" class="card-footer-item">Abbrechen</a>
         </footer>
@@ -53,6 +53,13 @@
 export default {
     name: "ShowActorComponent",
     props: ['actorData'],
+
+    methods: {
+        entfernen:function (event) {
+            axios.delete('/actor/'+this.actorData.slug)
+        },
+    }
+
 }
 </script>
 

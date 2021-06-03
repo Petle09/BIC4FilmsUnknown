@@ -7,22 +7,22 @@
                 <TableElement element-type="th">ID</TableElement>
                 <TableElement element-type="th">Name</TableElement>
                 <TableElement element-type="th">Beschreibung:</TableElement>
+                <TableElement element-type="th">Film ID:</TableElement>
                 <TableElement element-type="th">Zuletzt geändert:</TableElement>
                 <TableElement element-type="th"></TableElement>
             </tr>
             </thead>
-            <tbody>
+            <tbody class="table is-bordered is is-striped">
             <tr  v-for="data in actors" v-if="data.name.toLowerCase().includes(message.toLowerCase())">
 
                 <TableElement  element-type="td">
                     <a :href="'/actor/' + data.slug"
                        :title="'Bearbeiten'" v-text="data.id"/>
-<!--                  <a :href="'/data/' + data.slug"
-                       :title="data.id" v-text="data.id"/> -->
                 </TableElement>
                 <TableElement element-type="td">{{ data.name }}</TableElement>
                 <TableElement element-type="td">{{ data.description }}</TableElement>
-                <TableElement element-type="td">{{ data.updated_at |  }}</TableElement>
+                <TableElement width="100" text-class="has-text-centered" element-type="td">{{ data.film_id }}</TableElement>
+                <TableElement element-type="td">{{ data.updated_at.substring(0,data.updated_at.indexOf('.'))}}</TableElement>
                 <TableElement element-type="td" style="width: 200px"></TableElement>
             </tr>
             </tbody>

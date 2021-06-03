@@ -11,16 +11,16 @@
                 <TableElement element-type="th"></TableElement>
             </tr>
             </thead>
-            <tbody>
-            <tr v-for="data in actors" :keydata.="id">
+            <tbody class="table is-bordered is is-striped">
+            <tr v-for="data in actors" :keydata.="data.id">
                 <TableElement element-type="td">
               <a :href="'/actor/'+data.slug"
                    :title="'Bearbeiten'" v-text="data.id"/>
                 </TableElement>
                 <TableElement element-type="td">{{ data.name }}</TableElement>
                 <TableElement element-type="td">{{ data.description }}</TableElement>
-                <TableElement element-type="td">{{ data.film_id }}</TableElement>
-                <TableElement element-type="td">{{ data.updated_at }}</TableElement>
+                <TableElement width="100" text-class="has-text-centered" element-type="td">{{ data.film_id }}</TableElement>
+                <TableElement element-type="td" >{{ data.updated_at.substring(0,data.updated_at.indexOf('.'))}}</TableElement>
                 <TableElement element-type="td" style="width: 200px"></TableElement>
             </tr>
             </tbody>
