@@ -35,6 +35,7 @@ Vue.component('createActor',require('./components/CreateActorComponent.vue').def
 Vue.component('createMovie',require('./components/CreateMovieComponent.vue').default);
 Vue.component('showActor',require('./components/ShowActorComponent.vue').default);
 Vue.component('showMovie',require('./components/ShowMovieComponent.vue').default);
+Vue.component('editMovie',require('./components/EditMovieComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -42,23 +42,27 @@
             </div>
         </div>
         <footer class="card-footer">
-            <a :href="'/actor'" v-on:click="entfernen" class="button card-footer-item">Löschen</a>
-            <a :href="'/actor/' +actorData.slug+ '/edit'" class="card-footer-item">Bearbeiten</a>
-            <a :href="'/actor'" class="card-footer-item">Abbrechen</a>
-        </footer>
-    </div>
+           <button class="button is-danger" @click="entfernen">Delete</button>
+            <!--<a :href="'/actor'" v-on:click="entfernen" class="button card-footer-item">Löschen</a>-->
+           <a :href="'/actor/' +actorData.slug+ '/edit'" class="card-footer-item">Bearbeiten</a>
+           <a :href="'/actor'" class="card-footer-item">Abbrechen</a>
+       </footer>
+   </div>
 </template>
 
 <script>
 export default {
-    name: "ShowActorComponent",
-    props: ['actorData'],
+   name: "ShowActorComponent",
+   props: ['actorData'],
 
-    methods: {
-        entfernen:function (event) {
-            axios.delete('/actor/'+this.actorData.slug)
-        },
-    }
+   methods: {
+       entfernen:function (event) {
+           console.log(this.actorData.slug)
+           axios.delete('/actor/'+this.actorData.slug)
+           window.location.href="/actor"
+
+       }
+   }
 
 }
 </script>
