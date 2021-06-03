@@ -55,6 +55,7 @@ class Form {
     }
 
     submit(requestType, url) {
+        console.log(this.data());
         this.submitting = true;
 
         return new Promise((resolve, reject) => {

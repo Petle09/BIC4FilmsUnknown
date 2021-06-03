@@ -18,7 +18,7 @@
                        :title="'Bearbeiten'" v-text="data.id"/></TableElement>
                 <TableElement element-type="td">{{ data.name }}</TableElement>
                 <TableElement element-type="td">{{ data.description }}</TableElement>
-                <TableElement element-type="td">{{ data.updated_at.substring(0,data.updated_at.indexOf('.'))}}</TableElement>
+                <TableElement element-type="td">{{ getTime(data.updated_at)}}</TableElement>
                 <TableElement element-type="td" style="width: 200px"></TableElement>
             </tr>
             </tbody>
@@ -30,6 +30,7 @@
 <script>
 
 import TableElement from "./base/TableComponent";
+import moment from "moment";
 export default {
     name: "MovielistComponent",
     components: {
@@ -58,6 +59,9 @@ export default {
                         this.noDomains = true;
                 });
         },
+        getTime(Date){
+            return moment (Date).format('DD.MM.YYYY h:mm:ss')
+        }
 
     }
 }

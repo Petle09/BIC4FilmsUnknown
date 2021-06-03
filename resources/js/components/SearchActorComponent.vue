@@ -22,7 +22,7 @@
                 <TableElement element-type="td">{{ data.name }}</TableElement>
                 <TableElement element-type="td">{{ data.description }}</TableElement>
                 <TableElement width="100" text-class="has-text-centered" element-type="td">{{ data.film_id }}</TableElement>
-                <TableElement element-type="td">{{ data.updated_at.substring(0,data.updated_at.indexOf('.'))}}</TableElement>
+                <TableElement element-type="td">{{ getTime(data.updated_at)}}</TableElement>
                 <TableElement element-type="td" style="width: 200px"></TableElement>
             </tr>
             </tbody>
@@ -36,6 +36,7 @@
 <script>
 import TableElement from "./base/TableComponent";
 import FindActorComponent from "./FindActorComponent";
+import moment from "moment";
 
 export default {
     name: "SearchActorComponent",
@@ -66,6 +67,9 @@ export default {
                         this.noDomains = true;
                 });
         },
+        getTime(Date){
+            return moment (Date).format('DD.MM.YYYY h:mm:ss')
+        }
 
     }
 }

@@ -48,7 +48,7 @@ export default {
     },
     methods: {
         update:function (event) {
-            axios.put('/actor/'+this.actorData.slug , this.actor)
+            axios.put('/actor/'+this.actorData.slug, this.actor)
         },
     }
 }

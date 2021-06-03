@@ -36,9 +36,9 @@
             </div>
         </div>
         <footer class="card-footer">
-            <a href="#" class="card-footer-item">Löschen</a>
+            <button class="button is-danger" @click="entfernen">Delete</button>
             <a :href="'/film/'+movieData.slug+'/edit'" class="card-footer-item">Bearbeiten</a>
-            <a :href="'/actor'" class="card-footer-item">Abbrechen</a>
+            <a :href="'/film'" class="card-footer-item">Abbrechen</a>
         </footer>
     </div>
 </template>
@@ -47,6 +47,15 @@
 export default {
     name: "ShowMovieComponent",
     props:['movieData'],
+
+    methods: {
+        entfernen:function (event) {
+            console.log(this.movieData.slug)
+            axios.delete('/film/'+this.movieData.slug)
+            window.location.href="/film"
+
+        }
+    }
 }
 </script>
 
