@@ -59,44 +59,44 @@
                 <div class="navbar-start">
                     <a class="navbar-item {{ request()->routeIs('home') ? 'is-active' : '' }}"
                        href="{{ route('home') }}">
-                        Home
+                        Startseite
                     </a>
 
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link {{ request()->routeIs('actor.index') || request()->routeIs('actor.create') || request()->routeIs('actor.search') ? 'is-active' : '' }}">
-                            Actors
+                            Schauspieler
                         </a>
 
                         <div class="navbar-dropdown">
                             <a class="navbar-item {{ request()->routeIs('actor.index') ? 'is-active' : '' }}"
                                href="{{ route('actor.index') }}">
-                                List
+                                Liste
                             </a>
                             <a class="navbar-item {{ request()->routeIs('actor.create') ? 'is-active' : '' }}"
                                href="{{ route('actor.create') }}">
-                                Create
+                                Hinzufügen
                             </a>
                             <hr class="navbar-divider">
                             <a class="navbar-item {{ request()->routeIs('actor.search') ? 'is-active' : '' }}"
                                href="{{ route('actor.search') }}">
-                                Search
+                                Suchen
                             </a>
                         </div>
                     </div>
 
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link {{ request()->routeIs('film.index') || request()->routeIs('film.create') ? 'is-active' : '' }}">
-                            Films
+                            Filme
                         </a>
 
                         <div class="navbar-dropdown">
                             <a class="navbar-item {{ request()->routeIs('film.index') ? 'is-active' : '' }}"
                                href="{{ route('film.index') }}">
-                                List
+                                Liste
                             </a>
                             <a class="navbar-item {{ request()->routeIs('film.create') ? 'is-active' : '' }}"
                                href="{{ route('film.create') }}">
-                                Create
+                                Hinzufügen
                             </a>
                         </div>
                     </div>
@@ -107,9 +107,9 @@
                 @guest
                     <div class="navbar-item">
                         <div class="buttons">
-                            <a class="button" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="button" href="{{ route('login') }}">{{ __('Anmelden') }}</a>
                             @if (Route::has('register'))
-                                <a class="button" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="button" href="{{ route('register') }}">{{ __('Registrieren') }}</a>
                             @endif
                         </div>
                     </div>
@@ -123,7 +123,7 @@
                             <a class="navbar-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('Abmelden') }}
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                   style="display: none;">

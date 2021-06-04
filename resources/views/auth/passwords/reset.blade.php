@@ -6,7 +6,7 @@
             <div class="columns is-multiline">
                 <div class="card custom-card column is-half is-offset-one-quarter">
                     <header class="card-header">
-                        <h1 class="card-header-title is-centered">{{ __('Reset Password') }}</h1>
+                        <h1 class="card-header-title is-centered">{{ __('Passwort zurücksetzen') }}</h1>
                     </header>
                     <div class="card-content">
                         <div class="content">
@@ -16,7 +16,7 @@
                                 <input type="hidden" name="token" value="{{ $token }}">
 
                                 <div class="field">
-                                    <label class="label" for="email">{{ __('E-Mail Address') }}</label>
+                                    <label class="label" for="email">{{ __('E-Mail Addresse') }}</label>
                                     <div class="control">
                                         <input name="email" class="input @error('email') is-danger @enderror"
                                                type="email" id="email"
@@ -29,7 +29,7 @@
                                 </div>
 
                                 <div class="field">
-                                    <label class="label" for="password">{{ __('Password') }}</label>
+                                    <label class="label" for="password">{{ __('Passwort') }}</label>
                                     <div class="control">
                                         <input name="password" class="input @error('password') is-danger @enderror"
                                                type="password" id="password"
@@ -41,7 +41,7 @@
                                 </div>
 
                                 <div class="field">
-                                    <label class="label" for="password-confirm">{{ __('Confirm Password') }}</label>
+                                    <label class="label" for="password-confirm">{{ __('Passwort Bestätigen') }}</label>
                                     <div class="control">
                                         <input class="input" type="password"
                                                id="password-confirm" name="password_confirmation"
@@ -49,8 +49,8 @@
                                     </div>
                                 </div>
 
-                                <button type="submit" class="button is-large is-primary is-outlined is-fullwidth">
-                                    {{ __('Send Password Reset Link') }}
+                                <button type="submit" class="button is-large is-outlined is-fullwidth">
+                                    {{ __('Link zum zürücksetzen des Passwortes versenden') }}
                                 </button>
                             </form>
                         </div>

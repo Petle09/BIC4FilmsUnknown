@@ -6,7 +6,7 @@
             <div class="columns is-multiline">
                 <div class="card custom-card column is-half is-offset-one-quarter">
                     <header class="card-header">
-                        <h1 class="card-header-title is-centered">{{ __('Register') }}</h1>
+                        <h1 class="card-header-title is-centered">{{ __('Registrierung') }}</h1>
                     </header>
                     <div class="card-content">
                         <div class="content">
@@ -32,12 +32,12 @@
                                                type="email" required>
                                     </div>
                                     @error('email')
-                                    <p class="help is-danger">Email is not valid</p>
+                                    <p class="help is-danger">Email ist ungültig</p>
                                     @enderror
                                 </div>
 
                                 <div class="field">
-                                    <label class="label" for="password">Password</label>
+                                    <label class="label" for="password">Passwort</label>
                                     <div class="control">
                                         <input name="password" id="password"
                                                class="input @error('password') is-danger @enderror"
@@ -45,12 +45,12 @@
                                                required>
                                     </div>
                                     @error('password')
-                                    <p class="help is-danger">Password is not valid</p>
+                                    <p class="help is-danger">Passwort ist ungültig</p>
                                     @enderror
                                 </div>
 
                                 <div class="field">
-                                    <label class="label" for="password-confirm">Confirm Password</label>
+                                    <label class="label" for="password-confirm">Passwort bestätigen</label>
                                     <div class="control">
                                         <input class="input field-spacer" type="password"
                                                id="password-confirm" name="password_confirmation"
@@ -59,7 +59,7 @@
                                 </div>
 
                                 <button type="submit" class="button is-large is-outlined is-fullwidth">
-                                    {{ __('Register') }}
+                                    {{ __('Registrieren') }}
                                 </button>
                             </form>
                         </div>

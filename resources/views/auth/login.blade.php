@@ -6,7 +6,7 @@
             <div class="columns is-multiline">
                 <div class="card custom-card column is-half is-offset-one-quarter">
                     <header class="card-header">
-                        <h1 class="card-header-title is-centered">{{ __('Sign In') }}</h1>
+                        <h1 class="card-header-title is-centered">{{ __('Anmeldung') }}</h1>
                     </header>
                     <div class="card-content">
                         <div class="content">
@@ -29,19 +29,19 @@
                                                value="{{old('email')}}">
                                     </div>
                                     @error('email')
-                                    <p class="help is-danger">Email is not valid</p>
+                                    <p class="help is-danger">Email ist ungültig</p>
                                     @enderror
                                 </div>
 
                                 <div class="field">
-                                    <label class="label" for="password">Password</label>
+                                    <label class="label" for="password">Passwort</label>
                                     <div class="control">
                                         <input id="password" title="password" name="password" type="password" required
                                                autocomplete="current-password"
                                                class="input @error('password') is-danger @enderror">
                                     </div>
                                     @error('email')
-                                    <p class="help is-danger">Password is not valid</p>
+                                    <p class="help is-danger">Passwort ist ungültiig</p>
                                     @enderror
                                 </div>
 
@@ -55,7 +55,7 @@
                                                             <input type="checkbox" name="remember"
                                                                    id="remember"
                                                                 {{ old('remember') ? 'checked' : '' }}>
-                                                            {{ __('Remember Me') }}
+                                                            {{ __('Zugangsdaten speichern') }}
                                                         </label>
                                                     </div>
                                                 </div>
@@ -67,7 +67,7 @@
                                             @if (Route::has('password.request'))
                                                 <a class="btn btn-link level-right"
                                                    href="{{ route('password.request') }}">
-                                                    {{ __('Forgot Your Password?') }}
+                                                    {{ __('Passwort vergessen?') }}
                                                 </a>
                                             @endif
                                         </p>
@@ -75,7 +75,7 @@
                                 </div>
 
                                 <button type="submit" class="button is-large is-outlined is-fullwidth">
-                                    {{ __('Login') }}
+                                    {{ __('Anmelden') }}
                                 </button>
                             </form>
                         </div>

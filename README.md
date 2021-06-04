@@ -2,10 +2,19 @@
 
 ## The films about the unknown
 
-This software lists films and actors belongs to them.
-It is possible to search for films by various parameters.
+Diese Webseite listet alle Filme und ihre dazugehörigen Schauspieler auf. 
+Mithilfe einer Suchfunktion kann nach den Schauspielern oder dem Film gesucht werden.
 
-## Exercise
+## Verwendete Technologien:
+
+Diese Webseite wurde mithilfe von CSS und dem dazugehörigen Framework Bulma designed.
+Unsere eigenen Anpassungen finden sich in dem _variables.scss und -custom.scss Dateien.
+
+Des weiteren wurde JavaScript und Vue Components verwendet, um dem Benutzer eine leichte Interaktion und ein dynamisches Nutzungsgefühl zu ermöglichen. 
+
+Die Daten über die Filme und Schauspieler wurden auf einer eigenen Datenbank abgelegt in welcher sie auch verändert werden.
+
+Dem Benutzer stehen folgende Möglichkeiten zur Verfügung Änderungen an der Datenbank vor zu nehmen.
 
 ### Already providing
 
@@ -77,3 +86,33 @@ It is also possible to run ```npm run watch``` so it is not need to execute ```n
 
 To make starting developing fast there are some seeders implemented to fill all needed tables except the user table.
 To populate the database run the command ```php artisan db:seed``` in the filminal in project root folder.
+
+## Wie man die Webseite verwendet:
+* Sobald man die Webseite ansteuert, findet man sich auf der Willkommensseite wieder.
+  Hier hat man die Möglichkeit, sich mit einem bereits registrierten Nutzer anzumelden, oder einen neuen Benutzer anzulegen.
+    * Möchte man einen neuen Benutzer anlegen, muss man auf den Button "Register" drücken. Danach geht öffnet sich ein Fenster,
+        in dem man seinen Namen, seine E-Mail Adresse und sein Passwort 2x eingibt. 
+    * Möchte man jedoch einen Registrierten Benutzer anmelden, öffnet sich ein Fenster wo man seine E-Mail Adresse und sein Passwort eingibt.
+* Danach gelangt man zum Hauptmenü.
+    * Hier hat man die volle Auswahl. Man kann sich mit dem Dropdown Menü seines Benutzers wieder ausloggen.
+    * Man kann mit dem Dropdownm Menü bei dem Schauspieler die Liste aller Schauspieler anzeigen lassen.
+        * Einen neuen Schauspieler erstellen.
+        * Eine Suche nach den Schauspielern oder einem Film durchführen.
+    * Man kann mit dem Dropdownm Menü bei dem Film die Liste aller Filme anzeigen lassen.
+        * Einen neuen Film erstellen.
+* Hat man eine Liste ausgewählt, hat man die Möglichkeit mittels des roten Links eine detailiertere Ansicht des betreffenden Schauspielers oder Films zu erhalten.
+    * Diese Ansicht dient gleichzeitig auch dafür den gewählten Eintrag zu bearbeiten oder zu löschen. 
+        * Mit Abbrechen gelangt man wieder zurück zur jeweiligen Listenansicht.
+        * Wählt man Bearbeiten gelangt man auf eine weitere Ansicht in der man dann je nach dem Name, Beschreibung und die Film ID verändern kann.
+        * Wählt man Löschen, wird der Eintrag gelöscht und man gelangt zurück zur Liste.
+* Hat man Hinzufügen ausgewählt, gelangt man zu einer weiteren Maske in der man Name, Beschreibung und Film ID eintragen kann.
+    * Mit Hinzufügen wird dieser Eintrag der Liste hinzugefügt. 
+    * Mit Abbrechen gelangt man wieder zurück zur Startseite.
+* Hat man die Suche ausgewählt, gelangt man zu einer Listenansicht mit zwei aufegesetzten Suchfeldern.
+    * Das erste Suchfeld sucht nach Namen der Schauspieler. 
+    * Das zweite Suchfeld sucht nach den Film ID's.
+    * Je nach dem welche Suchanfrage man startet wird die Liste eingeschränkt. Man kann auch in beide Suchfelder etwas eingeben um es exakt zu spezifizieren.
+
+
+
+

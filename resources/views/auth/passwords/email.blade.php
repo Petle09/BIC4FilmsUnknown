@@ -6,7 +6,7 @@
             <div class="columns is-multiline">
                 <div class="card custom-card column is-half is-offset-one-quarter">
                     <header class="card-header">
-                        <h1 class="card-header-title is-centered">{{ __('Reset Password') }}</h1>
+                        <h1 class="card-header-title is-centered">{{ __('Passwort zurücksetzen') }}</h1>
                     </header>
                     <div class="card-content">
                         <div class="content">
@@ -21,7 +21,7 @@
                             <form method="POST" action="{{ route('password.email') }}">
                                 @csrf
                                 <div class="field">
-                                    <label class="label" for="email">{{ __('E-Mail Address') }}</label>
+                                    <label class="label" for="email">{{ __('E-Mail Addresse') }}</label>
                                     <div class="control">
                                         <input name="email" id="email"
                                                class="input @error('email') is-danger @enderror"
@@ -32,8 +32,8 @@
                                     <p class="help is-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
-                                <button type="submit" class="button is-large is-primary is-outlined is-fullwidth">
-                                    {{ __('Send Password Reset Link') }}
+                                <button type="submit" class="button is-large is-outlined is-fullwidth">
+                                    {{ __('Link zum zürücksetzen des Passwortes versenden') }}
                                 </button>
                             </form>
                         </div>
