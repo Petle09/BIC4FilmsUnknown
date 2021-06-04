@@ -2,24 +2,30 @@
     <div class="card">
         <header class="card-header">
             <h1 class="card-header-title">
-                Schauspieler anlegen:
+                Schauspieler Bearbeiten
             </h1>
         </header>
-
-
         <query-message :success="form.isSuccess()" :fail="form.isFail()"
                        :message="form.failMessage || form.successMessage"></query-message>
-
-
         <div class="box px-4 py-4">
             <div class="field">
                 <label class="label">Name</label>
+                <article class="message is-danger" v-if="errors && errors.name">
+                    <div class="message-body">
+                        {{ errors.name[0] }}
+                    </div>
+                </article>
                 <div class="field">
                     <input class="input" type="Name" v-model="form.name">
                 </div>
             </div>
             <div class="field">
                 <label class="label">Beschreibung</label>
+                <article class="message is-danger" v-if="errors && errors.description">
+                    <div class="message-body">
+                        {{ errors.description[0] }}
+                    </div>
+                </article>
                 <div class="field">
                     <textarea class="textarea input" type="Beschreibung" v-model="form.description"
                               rows="4"></textarea>
@@ -27,6 +33,11 @@
             </div>
             <div class="field">
                 <label class="label">Film ID</label>
+                <article class="message is-danger" v-if="errors && errors.film_id">
+                    <div class="message-body">
+                        {{ errors.film_id[0] }}
+                    </div>
+                </article>
                 <div class="field">
                     <input class="input" type="Film ID" v-model="form.film_id">
                 </div>
@@ -38,9 +49,7 @@
         </footer>
     </div>
 </template>
-
 <script>
-
 
 export default {
     name: "EditActorComponent",
@@ -50,11 +59,18 @@ export default {
         return {
             form:new Form({ name: this.actorData.name,
                 description: this.actorData.description, film_id: this.actorData.film_id }),
+            errors: null,
         }
     },
     methods: {
         update:function (event) {
-            this.form.put('/actor/'+this.actorData.slug)
+            this.form.put('/actor/'+this.actorData.slug).then(
+                result => {
+                    window.location.href="/actor"
+                }
+            ).catch(error => {
+                this.errors = error
+            })
         },
     }
 }

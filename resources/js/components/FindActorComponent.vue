@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <Table id="Actors" class="table is-4-desktop">
             <thead>
             <tr class="title is-7">
@@ -24,7 +23,6 @@
             </tr>
             </tbody>
         </Table>
-
     </div>
 </template>
 

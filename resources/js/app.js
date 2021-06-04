@@ -23,7 +23,6 @@ window.Vue = vue;
 // Hier Komponenten eintragen
 Vue.component('mainMenu', require('./components/MainMenuComponent.vue').default);
 Vue.component('query-message', require('./components/base/QueryMessage.vue').default);
-Vue.component('Nr2', require('./components/Exampl2Component.vue').default);
 
 //Own Components
 Vue.component('listMovie', require('./components/ListMovieComponent.vue').default);

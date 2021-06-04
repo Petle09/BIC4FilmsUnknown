@@ -2,7 +2,7 @@
     <div class="card" >
         <header class="card-header">
             <h1 class="card-header-title">
-                Übersicht Film:
+                Übersicht Film
             </h1>
         </header>
         <div class="table-container">

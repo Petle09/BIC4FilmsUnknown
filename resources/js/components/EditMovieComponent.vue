@@ -2,47 +2,30 @@
     <div class="card">
         <header class="card-header">
             <h1 class="card-header-title">
-                Film anlegen:
+                Film Bearbeiten
             </h1>
         </header>
-
-        <!-- <form>
-            <div class="box px-4 py-4">
-                <label class="name">Name</label>
-                    <div class="field">
-                       <input class="input" v-model="">
-                    </div>
-                <input type="text" class="form-control" name="name" id="name" />
-            </div>
-
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" class="form-control" name="email" id="email" />
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="form-control" name="message" id="message" rows="5"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Send message</button>
-        </form> -->
-
-
-
-
-
             <query-message :success="form.isSuccess()" :fail="form.isFail()"
                            :message="form.failMessage || form.successMessage"></query-message>
             <div class="box px-4 py-4">
                 <div class="field">
                     <label class="label">Name</label>
+                    <article class="message is-danger" v-if="errors && errors.name">
+                        <div class="message-body">
+                            {{ errors.name[0] }}
+                        </div>
+                    </article>
                     <div class="field">
                         <input class="input" type="Name" v-model="form.name">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Beschreibung</label>
+                    <article class="message is-danger" v-if="errors && errors.description">
+                        <div class="message-body">
+                            {{ errors.description[0] }}
+                        </div>
+                    </article>
                     <div class="field">
                     <textarea class="textarea input" type="Beschreibung" v-model="form.description"
                               rows="4"></textarea>
@@ -63,13 +46,19 @@ export default {
 
     data() {
         return {
-            form:new Form( { name: this.movieData.name, description: this.movieData.description})
+            form:new Form( { name: this.movieData.name, description: this.movieData.description}),
+            errors: null,
         }
     },
     methods: {
         update:function (event) {
-            console.log(this.form)
-            this.form.put('/film/'+this.movieData.slug);
+            this.form.put('/film/'+this.movieData.slug).then(
+                result => {
+                    window.location.href="/film"
+                }
+            ).catch(error => {
+                this.errors = error
+            })
         },
     }
 }
