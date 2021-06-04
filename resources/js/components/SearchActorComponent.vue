@@ -6,10 +6,9 @@
             <tr>
                 <TableElement element-type="th">ID</TableElement>
                 <TableElement element-type="th">Name</TableElement>
-                <TableElement element-type="th">Beschreibung:</TableElement>
-                <TableElement element-type="th">Film ID:</TableElement>
-                <TableElement element-type="th">Zuletzt geändert:</TableElement>
-                <TableElement element-type="th"></TableElement>
+                <TableElement element-type="th">Beschreibung</TableElement>
+                <TableElement element-type="th">Film ID</TableElement>
+                <TableElement element-type="th">Zuletzt geändert</TableElement>
             </tr>
             </thead>
             <tbody class="table is-bordered is is-striped">

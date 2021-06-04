@@ -4135,7 +4135,7 @@ fieldset[disabled] .button {
 }
 
 .table.is-striped tbody tr:not(.is-selected):nth-child(even) {
-  background-color: grey;
+  background-color: #ffffff;
 }
 
 .table-container {
@@ -6147,7 +6147,7 @@ fieldset[disabled] .select select:hover {
 }
 
 .card-footer {
-  background-color: transparent;
+  background-color: white;
   border-top: 1px solid #dbdbdb;
   align-items: stretch;
   display: flex;
@@ -7685,7 +7685,7 @@ a.navbar-item.is-active,
 .navbar-link:focus-within,
 .navbar-link:hover,
 .navbar-link.is-active {
-  background-color: #fafafa;
+  background-color: #0019b8;
   color: red;
 }
 
@@ -7716,16 +7716,16 @@ a.navbar-item.is-active,
 
 .navbar-item.is-tab:focus,
 .navbar-item.is-tab:hover {
-  background-color: transparent;
+  background-color: #0019b8;
   border-bottom-color: red;
 }
 
 .navbar-item.is-tab.is-active {
-  background-color: transparent;
+  background-color: #0019b8;
   border-bottom-color: red;
   border-bottom-style: solid;
   border-bottom-width: 3px;
-  color: black;
+  color: red;
   padding-bottom: calc(0.5rem - 3px);
 }
 
@@ -7871,12 +7871,12 @@ a.navbar-item.is-active,
 
   .navbar.is-transparent .navbar-dropdown a.navbar-item:focus,
   .navbar.is-transparent .navbar-dropdown a.navbar-item:hover {
-    background-color: whitesmoke;
-    color: #0a0a0a;
+    background-color: #0019b8;
+    color: red;
   }
 
   .navbar.is-transparent .navbar-dropdown a.navbar-item.is-active {
-    background-color: whitesmoke;
+    background-color: #0019b8;
     color: red;
   }
 
@@ -7972,12 +7972,12 @@ a.navbar-item.is-active,
 
   .navbar-dropdown a.navbar-item:focus,
   .navbar-dropdown a.navbar-item:hover {
-    background-color: whitesmoke;
-    color: #0a0a0a;
+    background-color: #0019b8;
+    color: red;
   }
 
   .navbar-dropdown a.navbar-item.is-active {
-    background-color: whitesmoke;
+    background-color: #0019b8;
     color: red;
   }
 
@@ -8067,7 +8067,7 @@ a.navbar-item.is-active,
   .navbar-item.has-dropdown:focus .navbar-link,
   .navbar-item.has-dropdown:hover .navbar-link,
   .navbar-item.has-dropdown.is-active .navbar-link {
-    background-color: #fafafa;
+    background-color: #0019b8;
   }
 }
 
@@ -11712,12 +11712,13 @@ label.panel-block:hover {
 }
 
 .footer {
-  background-color: #fafafa;
+  background-color: white;
   padding: 1rem 2.5rem 2.5rem;
 }
 
 .main {
   background: #F7F7F7;
+  background-image: url(/images/Background.jpg?45be441b23da720157fddf65f389c337);
 }
 
 .is-fullheight.columns {

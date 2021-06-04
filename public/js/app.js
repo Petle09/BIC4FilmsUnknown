@@ -2128,7 +2128,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "EditMovieComponent",
   props: ['movieData'],
@@ -2375,8 +2374,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2407,7 +2404,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     getTime: function getTime(Date) {
-      return moment__WEBPACK_IMPORTED_MODULE_1___default()(Date).format('DD.MM.YYYY h:mm:ss');
+      return moment__WEBPACK_IMPORTED_MODULE_1___default()(Date).format('DD.MM.YYYY hh:mm:ss');
     }
   }
 });
@@ -2426,8 +2423,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _base_TableComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./base/TableComponent */ "./resources/js/components/base/TableComponent.vue");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
-//
-//
 //
 //
 //
@@ -2485,7 +2480,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     getTime: function getTime(Date) {
-      return moment__WEBPACK_IMPORTED_MODULE_1___default()(Date).format('DD.MM.YYYY h:mm:ss');
+      return moment__WEBPACK_IMPORTED_MODULE_1___default()(Date).format('DD.MM.YYYY hh:mm:ss');
     }
   }
 });
@@ -2587,7 +2582,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -2604,7 +2598,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       actors: [],
-      message: '',
+      messageName: '',
+      messageID: '',
       loading: true,
       noDomains: false
     };
@@ -2621,7 +2616,18 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     getTime: function getTime(Date) {
-      return moment__WEBPACK_IMPORTED_MODULE_2___default()(Date).format('DD.MM.YYYY h:mm:ss');
+      return moment__WEBPACK_IMPORTED_MODULE_2___default()(Date).format('DD.MM.YYYY hh:mm:ss');
+    },
+    searchResponse: function searchResponse(a, b) {
+      if (b === '') {
+        return true;
+      }
+
+      if (a === b) {
+        return true;
+      } else if (a !== b) {
+        return false;
+      }
     }
   }
 });
@@ -2637,6 +2643,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _base_TableComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./base/TableComponent */ "./resources/js/components/base/TableComponent.vue");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -2684,19 +2693,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ShowActorComponent",
+  components: {
+    TableElement: _base_TableComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   props: ['actorData'],
   methods: {
-    entfernen: function entfernen(event) {
+    deleteActor: function deleteActor(event) {
       console.log(this.actorData.slug);
       axios["delete"]('/actor/' + this.actorData.slug);
       window.location.href = "/actor";
+    },
+    editActor: function editActor(event) {
+      window.location.href = "/actor/" + this.actorData.slug + "/edit";
+    },
+    getback: function getback(event) {
+      window.location.href = "/actor";
+    },
+    getTime: function getTime(Date) {
+      return moment__WEBPACK_IMPORTED_MODULE_1___default()(Date).format('DD.MM.YYYY hh:mm:ss');
     }
   }
 });
@@ -2712,6 +2730,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _base_TableComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base/TableComponent */ "./resources/js/components/base/TableComponent.vue");
 //
 //
 //
@@ -2757,14 +2778,67 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ShowMovieComponent",
+  components: {
+    TableElement: _base_TableComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: ['movieData'],
   methods: {
-    entfernen: function entfernen(event) {
+    deleteMovie: function deleteMovie(event) {
       console.log(this.movieData.slug);
       axios["delete"]('/film/' + this.movieData.slug);
       window.location.href = "/film";
+    },
+    editMovie: function editMovie(event) {
+      window.location.href = "/film/" + this.movieData.slug + "/edit";
+    },
+    getback: function getback(event) {
+      window.location.href = "/film";
+    },
+    getTime: function getTime(Date) {
+      return moment__WEBPACK_IMPORTED_MODULE_0___default()(Date).format('DD.MM.YYYY hh:mm:ss');
     }
   }
 });
@@ -42779,7 +42853,10 @@ var render = function() {
     [
       _c(
         "Table",
-        { staticClass: "table", attrs: { id: "Schauspielerliste" } },
+        {
+          staticClass: "table is-fullwidth",
+          attrs: { id: "Schauspielerliste" }
+        },
         [
           _c("thead", { staticClass: "title" }, [
             _c(
@@ -42795,18 +42872,16 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("Beschreibung:")
+                  _vm._v("Beschreibung")
                 ]),
                 _vm._v(" "),
                 _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("Film ID:")
+                  _vm._v("Film ID")
                 ]),
                 _vm._v(" "),
                 _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("Zuletzt geändert:")
-                ]),
-                _vm._v(" "),
-                _c("TableElement", { attrs: { "element-type": "th" } })
+                  _vm._v("Zuletzt geändert")
+                ])
               ],
               1
             )
@@ -42820,15 +42895,25 @@ var render = function() {
                 "tr",
                 { attrs: { "keydata.": data.id } },
                 [
-                  _c("TableElement", { attrs: { "element-type": "td" } }, [
-                    _c("a", {
+                  _c(
+                    "TableElement",
+                    {
                       attrs: {
-                        href: "/actor/" + data.slug,
-                        title: "Bearbeiten"
-                      },
-                      domProps: { textContent: _vm._s(data.id) }
-                    })
-                  ]),
+                        width: "45",
+                        "text-class": "has-text-centered",
+                        "element-type": "td"
+                      }
+                    },
+                    [
+                      _c("a", {
+                        attrs: {
+                          href: "/actor/" + data.slug,
+                          title: "Bearbeiten"
+                        },
+                        domProps: { textContent: _vm._s(data.id) }
+                      })
+                    ]
+                  ),
                   _vm._v(" "),
                   _c("TableElement", { attrs: { "element-type": "td" } }, [
                     _vm._v(_vm._s(data.name))
@@ -42852,12 +42937,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("TableElement", { attrs: { "element-type": "td" } }, [
                     _vm._v(_vm._s(_vm.getTime(data.updated_at)))
-                  ]),
-                  _vm._v(" "),
-                  _c("TableElement", {
-                    staticStyle: { width: "200px" },
-                    attrs: { "element-type": "td" }
-                  })
+                  ])
                 ],
                 1
               )
@@ -42896,72 +42976,82 @@ var render = function() {
     "div",
     { staticClass: "table-container" },
     [
-      _c("Table", { staticClass: "table", attrs: { id: "Filmliste" } }, [
-        _c("thead", { staticClass: "title" }, [
-          _c(
-            "tr",
-            { staticClass: "title" },
-            [
-              _c("TableElement", { attrs: { "element-type": "th" } }, [
-                _vm._v("ID")
-              ]),
-              _vm._v(" "),
-              _c("TableElement", { attrs: { "element-type": "th" } }, [
-                _vm._v("Name")
-              ]),
-              _vm._v(" "),
-              _c("TableElement", { attrs: { "element-type": "th" } }, [
-                _vm._v("Beschreibung:")
-              ]),
-              _vm._v(" "),
-              _c("TableElement", { attrs: { "element-type": "th" } }, [
-                _vm._v("Zuletzt geändert:")
-              ]),
-              _vm._v(" "),
-              _c("TableElement", { attrs: { "element-type": "th" } })
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c(
-          "tbody",
-          { staticClass: "table is-bordered is is-striped" },
-          _vm._l(_vm.films, function(data) {
-            return _c(
+      _c(
+        "Table",
+        { staticClass: "table is-fullwidth", attrs: { id: "Filmliste" } },
+        [
+          _c("thead", { staticClass: "title" }, [
+            _c(
               "tr",
-              { key: data.id },
+              { staticClass: "title" },
               [
-                _c("TableElement", { attrs: { "element-type": "td" } }, [
-                  _c("a", {
-                    attrs: { href: "/film/" + data.slug, title: "Bearbeiten" },
-                    domProps: { textContent: _vm._s(data.id) }
-                  })
+                _c("TableElement", { attrs: { "element-type": "th" } }, [
+                  _vm._v("ID")
                 ]),
                 _vm._v(" "),
-                _c("TableElement", { attrs: { "element-type": "td" } }, [
-                  _vm._v(_vm._s(data.name))
+                _c("TableElement", { attrs: { "element-type": "th" } }, [
+                  _vm._v("Name")
                 ]),
                 _vm._v(" "),
-                _c("TableElement", { attrs: { "element-type": "td" } }, [
-                  _vm._v(_vm._s(data.description))
+                _c("TableElement", { attrs: { "element-type": "th" } }, [
+                  _vm._v("Beschreibung")
                 ]),
                 _vm._v(" "),
-                _c("TableElement", { attrs: { "element-type": "td" } }, [
-                  _vm._v(_vm._s(_vm.getTime(data.updated_at)))
-                ]),
-                _vm._v(" "),
-                _c("TableElement", {
-                  staticStyle: { width: "200px" },
-                  attrs: { "element-type": "td" }
-                })
+                _c("TableElement", { attrs: { "element-type": "th" } }, [
+                  _vm._v("Zuletzt geändert")
+                ])
               ],
               1
             )
-          }),
-          0
-        )
-      ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            { staticClass: "table is-bordered is is-striped" },
+            _vm._l(_vm.films, function(data) {
+              return _c(
+                "tr",
+                { key: data.id },
+                [
+                  _c(
+                    "TableElement",
+                    {
+                      attrs: {
+                        width: "45",
+                        "text-class": "has-text-centered",
+                        "element-type": "td"
+                      }
+                    },
+                    [
+                      _c("a", {
+                        attrs: {
+                          href: "/film/" + data.slug,
+                          title: "Bearbeiten"
+                        },
+                        domProps: { textContent: _vm._s(data.id) }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("TableElement", { attrs: { "element-type": "td" } }, [
+                    _vm._v(_vm._s(data.name))
+                  ]),
+                  _vm._v(" "),
+                  _c("TableElement", { attrs: { "element-type": "td" } }, [
+                    _vm._v(_vm._s(data.description))
+                  ]),
+                  _vm._v(" "),
+                  _c("TableElement", { attrs: { "element-type": "td" } }, [
+                    _vm._v(_vm._s(_vm.getTime(data.updated_at)))
+                  ])
+                ],
+                1
+              )
+            }),
+            0
+          )
+        ]
+      )
     ],
     1
   )
@@ -42988,20 +43078,27 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "container " }, [
     _c("div", { staticClass: "columns is-multiline" }, [
-      _c("div", { staticClass: "card column is-half is-offset-one-quarter" }, [
-        _c("header", { staticClass: "card-header" }, [
-          _c("h1", {
-            staticClass: "card-header-title",
-            domProps: { textContent: _vm._s(_vm.title) }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-content" }, [
-          _c("div", { staticClass: "content" }, [_vm._t("default")], 2)
-        ])
-      ])
+      _c(
+        "div",
+        {
+          staticClass:
+            "card column is-half is-offset-one-quarter has-background-grey-light"
+        },
+        [
+          _c("header", { staticClass: "card-header" }, [
+            _c("h1", {
+              staticClass: "card-header-title",
+              domProps: { textContent: _vm._s(_vm.title) }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-content" }, [
+            _c("div", { staticClass: "content" }, [_vm._t("default")], 2)
+          ])
+        ]
+      )
     ])
   ])
 }
@@ -43035,18 +43132,39 @@ var render = function() {
           {
             name: "model",
             rawName: "v-model",
-            value: _vm.message,
-            expression: "message"
+            value: _vm.messageName,
+            expression: "messageName"
           }
         ],
-        attrs: { id: "input", placeholder: "Schauspieler?" },
-        domProps: { value: _vm.message },
+        attrs: { placeholder: "Schauspieler?" },
+        domProps: { value: _vm.messageName },
         on: {
           input: function($event) {
             if ($event.target.composing) {
               return
             }
-            _vm.message = $event.target.value
+            _vm.messageName = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.messageID,
+            expression: "messageID"
+          }
+        ],
+        attrs: { placeholder: "Film ID?" },
+        domProps: { value: _vm.messageID },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.messageID = $event.target.value
           }
         }
       }),
@@ -43068,18 +43186,16 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("Beschreibung:")
+                  _vm._v("Beschreibung")
                 ]),
                 _vm._v(" "),
                 _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("Film ID:")
+                  _vm._v("Film ID")
                 ]),
                 _vm._v(" "),
                 _c("TableElement", { attrs: { "element-type": "th" } }, [
-                  _vm._v("Zuletzt geändert:")
-                ]),
-                _vm._v(" "),
-                _c("TableElement", { attrs: { "element-type": "th" } })
+                  _vm._v("Zuletzt geändert")
+                ])
               ],
               1
             )
@@ -43089,7 +43205,10 @@ var render = function() {
             "tbody",
             { staticClass: "table is-bordered is is-striped" },
             _vm._l(_vm.actors, function(data) {
-              return data.name.toLowerCase().includes(_vm.message.toLowerCase())
+              return data.name
+                .toLowerCase()
+                .includes(_vm.messageName.toLowerCase()) &&
+                _vm.searchResponse(data.film_id, _vm.messageID)
                 ? _c(
                     "tr",
                     [
@@ -43125,12 +43244,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("TableElement", { attrs: { "element-type": "td" } }, [
                         _vm._v(_vm._s(_vm.getTime(data.updated_at)))
-                      ]),
-                      _vm._v(" "),
-                      _c("TableElement", {
-                        staticStyle: { width: "200px" },
-                        attrs: { "element-type": "td" }
-                      })
+                      ])
                     ],
                     1
                   )
@@ -43166,118 +43280,155 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card has-background-grey-light" }, [
+  return _c("div", { staticClass: "card" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("label", { staticClass: "label" }, [_vm._v("ID:")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "control" }, [
-        _c("input", {
-          staticClass: "input",
-          attrs: { type: "ID", placeholder: "ID", readonly: "" },
-          domProps: { value: _vm.actorData.id }
-        })
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("label", { staticClass: "label" }, [_vm._v("Name:")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "control" }, [
-        _c("input", {
-          staticClass: "input",
-          attrs: { type: "ID", placeholder: "Name", readonly: "" },
-          domProps: { value: _vm.actorData.name }
-        })
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("label", { staticClass: "label" }, [
-        _vm._v("Beschreibung des Schauspielers:")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "control" }, [
-        _c("input", {
-          staticClass: "input",
-          attrs: {
-            type: "ID",
-            placeholder: "Beschreibung des Schauspielers",
-            readonly: ""
-          },
-          domProps: { value: _vm.actorData.description }
-        })
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("label", { staticClass: "label" }, [_vm._v("Film ID:")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "control" }, [
-        _c("input", {
-          staticClass: "input",
-          attrs: { type: "ID", placeholder: "Film ID", readonly: "" },
-          domProps: { value: _vm.actorData.film_id }
-        })
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("label", { staticClass: "label" }, [
-        _vm._v("Schauspieler hinzugefügt am:")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "control" }, [
-        _c("input", {
-          staticClass: "input",
-          attrs: {
-            type: "ID",
-            placeholder: "Schauspieler hinzugefügt am",
-            readonly: ""
-          },
-          domProps: { value: _vm.actorData.created_at }
-        })
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("label", { staticClass: "label" }, [
-        _vm._v("Schauspieler zuletzt geändert am:")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "control" }, [
-        _c("input", {
-          staticClass: "input",
-          attrs: {
-            type: "ID",
-            placeholder: "Schauspieler zuletzt geändert am",
-            readonly: ""
-          },
-          domProps: { value: _vm.actorData.updated_at }
-        })
-      ])
+    _c("div", { staticClass: "table-container" }, [
+      _c(
+        "table",
+        {
+          staticClass: "table is is-fullwidth",
+          attrs: { id: "Schauspieler Übersicht" }
+        },
+        [
+          _c("thead", { staticClass: "title" }, [
+            _c(
+              "tr",
+              { staticClass: "title" },
+              [
+                _c("table-element", { attrs: { "element-type": "th" } }, [
+                  _vm._v("ID")
+                ]),
+                _vm._v(" "),
+                _c("table-element", { attrs: { "element-type": "th" } }, [
+                  _vm._v("Name")
+                ]),
+                _vm._v(" "),
+                _c("table-element", { attrs: { "element-type": "th" } }, [
+                  _vm._v("Beschreibung")
+                ]),
+                _vm._v(" "),
+                _c("table-element", { attrs: { "element-type": "th" } }, [
+                  _vm._v("Film ID")
+                ]),
+                _vm._v(" "),
+                _c("table-element", { attrs: { "element-type": "th" } }, [
+                  _vm._v("Hinzugefügt am")
+                ]),
+                _vm._v(" "),
+                _c("table-element", { attrs: { "element-type": "th" } }, [
+                  _vm._v("Zuletzt geändert")
+                ])
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("tbody", { staticClass: "table is-bordered is is-striped" }, [
+            _c(
+              "tr",
+              [
+                _c(
+                  "table-element",
+                  {
+                    attrs: {
+                      width: "45",
+                      "text-class": "has-text-centered",
+                      "element-type": "td"
+                    }
+                  },
+                  [_vm._v(_vm._s(_vm.actorData.id))]
+                ),
+                _vm._v(" "),
+                _c("table-element", { attrs: { "element-type": "td" } }, [
+                  _vm._v(_vm._s(_vm.actorData.name))
+                ]),
+                _vm._v(" "),
+                _c("table-element", { attrs: { "element-type": "td" } }, [
+                  _vm._v(_vm._s(_vm.actorData.description))
+                ]),
+                _vm._v(" "),
+                _c(
+                  "table-element",
+                  {
+                    attrs: {
+                      width: "100",
+                      "text-class": "has-text-centered",
+                      "element-type": "td"
+                    }
+                  },
+                  [_vm._v(_vm._s(_vm.actorData.film_id))]
+                ),
+                _vm._v(" "),
+                _c(
+                  "table-element",
+                  {
+                    attrs: {
+                      width: "130",
+                      "text-class": "has-text-centered",
+                      "element-type": "td"
+                    }
+                  },
+                  [_vm._v(_vm._s(_vm.getTime(_vm.actorData.created_at)))]
+                ),
+                _vm._v(" "),
+                _c(
+                  "table-element",
+                  {
+                    attrs: {
+                      "text-class": "has-text-centered",
+                      "element-type": "td"
+                    }
+                  },
+                  [_vm._v(_vm._s(_vm.getTime(_vm.actorData.updated_at)))]
+                )
+              ],
+              1
+            )
+          ])
+        ]
+      )
     ]),
     _vm._v(" "),
     _c("footer", { staticClass: "card-footer" }, [
       _c(
-        "button",
-        { staticClass: "button is-danger", on: { click: _vm.entfernen } },
-        [_vm._v("Delete")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
+        "div",
         {
-          staticClass: "card-footer-item",
-          attrs: { href: "/actor/" + _vm.actorData.slug + "/edit" }
+          staticClass: "button is-large is-fullwidth has-background-grey-light",
+          staticStyle: { padding: "25px" }
         },
-        [_vm._v("Bearbeiten")]
-      ),
-      _vm._v(" "),
-      _c("a", { staticClass: "card-footer-item", attrs: { href: "/actor" } }, [
-        _vm._v("Abbrechen")
-      ])
+        [
+          _c(
+            "button",
+            {
+              staticClass: "button  is-danger",
+              staticStyle: { margin: "250px" },
+              on: { click: _vm.deleteActor }
+            },
+            [_vm._v("Löschen")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "button",
+              staticStyle: { margin: "250px" },
+              on: { click: _vm.editActor }
+            },
+            [_vm._v("Bearbeiten")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "button",
+              staticStyle: { margin: "250px" },
+              on: { click: _vm.getback }
+            },
+            [_vm._v("Abbrechen")]
+          )
+        ]
+      )
     ])
   ])
 }
@@ -43288,7 +43439,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("header", { staticClass: "card-header" }, [
       _c("h1", { staticClass: "card-header-title" }, [
-        _vm._v("\n             Übersicht Schauspieler:\n         ")
+        _vm._v("\n             Übersicht Schauspieler\n         ")
       ])
     ])
   }
@@ -43314,104 +43465,136 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card has-background-grey-light" }, [
+  return _c("div", { staticClass: "card" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("label", { staticClass: "label" }, [_vm._v("ID:")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "field" }, [
-        _c("input", {
-          staticClass: "input",
-          attrs: { type: "ID", placeholder: "ID", readonly: "" },
-          domProps: { value: _vm.movieData.id }
-        })
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("label", { staticClass: "label" }, [_vm._v("Name:")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "field" }, [
-        _c("input", {
-          staticClass: "input",
-          attrs: { type: "ID", placeholder: "Name", readonly: "" },
-          domProps: { value: _vm.movieData.name }
-        })
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("label", { staticClass: "label" }, [
-        _vm._v("Beschreibung des Films:")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "field" }, [
-        _c("input", {
-          staticClass: "input",
-          attrs: {
-            type: "ID",
-            placeholder: "Beschreibung des Films",
-            readonly: ""
-          },
-          domProps: { value: _vm.movieData.description }
-        })
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("label", { staticClass: "label" }, [_vm._v("Film hinzugefügt am:")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "field" }, [
-        _c("input", {
-          staticClass: "input",
-          attrs: {
-            type: "ID",
-            placeholder: "Film hinzugefügt am",
-            readonly: ""
-          },
-          domProps: { value: _vm.movieData.created_at }
-        })
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("label", { staticClass: "label" }, [
-        _vm._v("Film zuletzt geändert am:")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "field" }, [
-        _c("input", {
-          staticClass: "input",
-          attrs: {
-            type: "ID",
-            placeholder: "Film zuletzt geändert am",
-            readonly: ""
-          },
-          domProps: { value: _vm.movieData.updated_at }
-        })
-      ])
+    _c("div", { staticClass: "table-container" }, [
+      _c(
+        "table",
+        { staticClass: "table is-fullwidth", attrs: { id: "Film Übersicht" } },
+        [
+          _c("thead", { staticClass: "title" }, [
+            _c(
+              "tr",
+              { staticClass: "title" },
+              [
+                _c("table-element", { attrs: { "element-type": "th" } }, [
+                  _vm._v("ID")
+                ]),
+                _vm._v(" "),
+                _c("table-element", { attrs: { "element-type": "th" } }, [
+                  _vm._v("Name")
+                ]),
+                _vm._v(" "),
+                _c("table-element", { attrs: { "element-type": "th" } }, [
+                  _vm._v("Beschreibung")
+                ]),
+                _vm._v(" "),
+                _c("table-element", { attrs: { "element-type": "th" } }, [
+                  _vm._v("Hinzugefügt am")
+                ]),
+                _vm._v(" "),
+                _c("table-element", { attrs: { "element-type": "th" } }, [
+                  _vm._v("Zuletzt geändert")
+                ])
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("tbody", { staticClass: "table is-bordered is-striped " }, [
+            _c(
+              "tr",
+              [
+                _c(
+                  "table-element",
+                  {
+                    attrs: {
+                      width: "45",
+                      "text-class": "has-text-centered",
+                      "element-type": "td"
+                    }
+                  },
+                  [_vm._v(_vm._s(_vm.movieData.id))]
+                ),
+                _vm._v(" "),
+                _c("table-element", { attrs: { "element-type": "td" } }, [
+                  _vm._v(_vm._s(_vm.movieData.name))
+                ]),
+                _vm._v(" "),
+                _c("table-element", { attrs: { "element-type": "td" } }, [
+                  _vm._v(_vm._s(_vm.movieData.description))
+                ]),
+                _vm._v(" "),
+                _c(
+                  "table-element",
+                  {
+                    attrs: {
+                      width: "130",
+                      "text-class": "has-text-centered",
+                      "element-type": "td"
+                    }
+                  },
+                  [_vm._v(_vm._s(_vm.getTime(_vm.movieData.created_at)))]
+                ),
+                _vm._v(" "),
+                _c(
+                  "table-element",
+                  {
+                    attrs: {
+                      "text-class": "has-text-centered",
+                      "element-type": "td"
+                    }
+                  },
+                  [_vm._v(_vm._s(_vm.getTime(_vm.movieData.updated_at)))]
+                )
+              ],
+              1
+            )
+          ])
+        ]
+      )
     ]),
     _vm._v(" "),
     _c("footer", { staticClass: "card-footer" }, [
       _c(
-        "button",
-        { staticClass: "button is-danger", on: { click: _vm.entfernen } },
-        [_vm._v("Delete")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
+        "div",
         {
-          staticClass: "card-footer-item",
-          attrs: { href: "/film/" + _vm.movieData.slug + "/edit" }
+          staticClass: "button is-large is-fullwidth has-background-grey-light",
+          staticStyle: { padding: "25px" }
         },
-        [_vm._v("Bearbeiten")]
-      ),
-      _vm._v(" "),
-      _c("a", { staticClass: "card-footer-item", attrs: { href: "/film" } }, [
-        _vm._v("Abbrechen")
-      ])
+        [
+          _c(
+            "button",
+            {
+              staticClass: "button  is-danger",
+              staticStyle: { margin: "250px" },
+              on: { click: _vm.deleteMovie }
+            },
+            [_vm._v("Löschen")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "button",
+              staticStyle: { margin: "250px" },
+              on: { click: _vm.editMovie }
+            },
+            [_vm._v("Bearbeiten")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "button",
+              staticStyle: { margin: "250px" },
+              on: { click: _vm.getback }
+            },
+            [_vm._v("Abbrechen")]
+          )
+        ]
+      )
     ])
   ])
 }
@@ -56975,8 +57158,8 @@ var Form = /*#__PURE__*/function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Zauna\PhpstormProjects\BIC4FilmsUnknown\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Zauna\PhpstormProjects\BIC4FilmsUnknown\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\chris\PhpstormProjects\BIC4FilmsUnknown\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\chris\PhpstormProjects\BIC4FilmsUnknown\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

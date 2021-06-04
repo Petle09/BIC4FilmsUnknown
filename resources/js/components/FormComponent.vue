@@ -22,10 +22,7 @@
                                 <p class="help is-danger" v-if="form.errors.has('name')"
                                    v-text="form.errors.get('title')"/>
                             </div>
-
-
-
-                            <div class="field">
+                   <div class="field">
                                 <label class="label" for="body">Description</label>
                                 <div class="control">
                                     <textarea id="body" v-model="form.description" class="textarea"></textarea>

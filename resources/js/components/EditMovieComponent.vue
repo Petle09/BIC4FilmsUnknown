@@ -28,9 +28,7 @@
         </footer>
     </div>
 </template>
-
 <script>
-
 
 export default {
     name: "EditMovieComponent",

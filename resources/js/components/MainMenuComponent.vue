@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
+    <div class="container ">
         <div class="columns is-multiline">
-            <div class="card column is-half is-offset-one-quarter">
+            <div class="card column is-half is-offset-one-quarter has-background-grey-light">
                 <header class="card-header">
                     <h1 class="card-header-title" v-text="title">
 

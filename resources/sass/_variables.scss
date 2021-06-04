@@ -38,8 +38,13 @@ $table-head-cell-color:white;
 //tableBody
 $table-body-background-color: white;
 $table-color: darken(#001CD1FF, 5%);
-$table-striped-row-even-background-color:grey;
+$table-striped-row-even-background-color: #ffffff;
 
+//footer
+$footer-background-color:white;
+$footer-padding: 1rem 2.5rem 2.5rem;
+$card-footer-background-color:white;
+//$card-footer-padding:50px;
 
 //title
 $title-color:white;
@@ -47,14 +52,20 @@ $title-size:size-3;
 
 //navbar
 $navbar-background-color:darken(#001CD1FF, 5%);
-$navbar-tab-active-color:black;
+//$navbar-tab-active-color:black;
 $navbar-item-color:white;
 $navbar-item-active-color:yellow;
 $navbar-dropdown-background-color:darken( #001CD1FF, 5%);
+$navbar-dropdown-item-hover-color:red;
+$navbar-dropdown-item-hover-background-color:darken( #001CD1FF, 5%);;
+$navbar-dropdown-item-active-background-color:darken( #001CD1FF, 5%);;
+$navbar-tab-active-background-color:darken( #001CD1FF, 5%);
+$navbar-tab-hover-background-color:darken( #001CD1FF, 5%);
+$navbar-item-hover-background-color:darken( #001CD1FF, 5%);
 
 $link:red;
 
 $card-header-color: #fddf2b;
 $card-header-color: #fff;
 
-$footer-padding: 1rem 2.5rem 2.5rem;
+
