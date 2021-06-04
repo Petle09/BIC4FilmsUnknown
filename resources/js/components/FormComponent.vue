@@ -36,7 +36,7 @@
                                 </p>
                             </div>
 
-                            <button type="submit" class="button is-large is-primary is-outlined is-fullwidth"
+                            <button type="submit" class="button is-large is-outlined is-fullwidth"
                                     v-text="edit ? 'Save' : 'Post'" :disabled="loading"/>
                         </form>
                     </div>

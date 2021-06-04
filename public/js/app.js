@@ -2128,6 +2128,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "EditMovieComponent",
   props: ['movieData'],
@@ -2141,7 +2168,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     update: function update(event) {
-      console.log(this.form.originalData);
+      console.log(this.form);
       this.form.put('/film/' + this.movieData.slug);
     }
   }
@@ -42622,19 +42649,19 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.form.originalData.name,
-                  expression: "form.originalData.name"
+                  value: _vm.form.name,
+                  expression: "form.name"
                 }
               ],
               staticClass: "input",
               attrs: { type: "Name" },
-              domProps: { value: _vm.form.originalData.name },
+              domProps: { value: _vm.form.name },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.$set(_vm.form.originalData, "name", $event.target.value)
+                  _vm.$set(_vm.form, "name", $event.target.value)
                 }
               }
             })
@@ -42650,23 +42677,19 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.form.originalData.description,
-                  expression: "form.originalData.description"
+                  value: _vm.form.description,
+                  expression: "form.description"
                 }
               ],
               staticClass: "textarea input",
               attrs: { type: "Beschreibung", rows: "4" },
-              domProps: { value: _vm.form.originalData.description },
+              domProps: { value: _vm.form.description },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.$set(
-                    _vm.form.originalData,
-                    "description",
-                    $event.target.value
-                  )
+                  _vm.$set(_vm.form, "description", $event.target.value)
                 }
               }
             })
