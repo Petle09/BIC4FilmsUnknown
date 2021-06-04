@@ -2068,21 +2068,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "EditActorComponent",
   props: ['actorData'],
   data: function data() {
     return {
-      actor: {
+      form: new Form({
         name: this.actorData.name,
         description: this.actorData.description,
         film_id: this.actorData.film_id
-      }
+      })
     };
   },
   methods: {
     update: function update(event) {
-      axios.put('/actor/' + this.actorData.slug, this.actor);
+      this.form.put('/actor/' + this.actorData.slug);
     }
   }
 });
@@ -42484,113 +42490,122 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "box px-4 py-4" }, [
-      _c("div", { staticClass: "field" }, [
-        _c("label", { staticClass: "label" }, [_vm._v("Name")]),
+  return _c(
+    "div",
+    { staticClass: "card" },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("query-message", {
+        attrs: {
+          success: _vm.form.isSuccess(),
+          fail: _vm.form.isFail(),
+          message: _vm.form.failMessage || _vm.form.successMessage
+        }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "box px-4 py-4" }, [
+        _c("div", { staticClass: "field" }, [
+          _c("label", { staticClass: "label" }, [_vm._v("Name")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "field" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.name,
+                  expression: "form.name"
+                }
+              ],
+              staticClass: "input",
+              attrs: { type: "Name" },
+              domProps: { value: _vm.form.name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "name", $event.target.value)
+                }
+              }
+            })
+          ])
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "field" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.actor.name,
-                expression: "actor.name"
-              }
-            ],
-            staticClass: "input",
-            attrs: { type: "Name" },
-            domProps: { value: _vm.actor.name },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+          _c("label", { staticClass: "label" }, [_vm._v("Beschreibung")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "field" }, [
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.description,
+                  expression: "form.description"
                 }
-                _vm.$set(_vm.actor, "name", $event.target.value)
+              ],
+              staticClass: "textarea input",
+              attrs: { type: "Beschreibung", rows: "4" },
+              domProps: { value: _vm.form.description },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "description", $event.target.value)
+                }
               }
-            }
-          })
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("label", { staticClass: "label" }, [_vm._v("Film ID")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "field" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.film_id,
+                  expression: "form.film_id"
+                }
+              ],
+              staticClass: "input",
+              attrs: { type: "Film ID" },
+              domProps: { value: _vm.form.film_id },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "film_id", $event.target.value)
+                }
+              }
+            })
+          ])
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "field" }, [
-        _c("label", { staticClass: "label" }, [_vm._v("Beschreibung")]),
+      _c("footer", { staticClass: "card-footer" }, [
+        _c(
+          "a",
+          { staticClass: "button card-footer-item", on: { click: _vm.update } },
+          [_vm._v("Bearbeiten")]
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "field" }, [
-          _c("textarea", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.actor.description,
-                expression: "actor.description"
-              }
-            ],
-            staticClass: "textarea input",
-            attrs: { type: "Beschreibung", rows: "4" },
-            domProps: { value: _vm.actor.description },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.actor, "description", $event.target.value)
-              }
-            }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "field" }, [
-        _c("label", { staticClass: "label" }, [_vm._v("Film ID")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "field" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.actor.film_id,
-                expression: "actor.film_id"
-              }
-            ],
-            staticClass: "input",
-            attrs: { type: "Film ID" },
-            domProps: { value: _vm.actor.film_id },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.actor, "film_id", $event.target.value)
-              }
-            }
-          })
-        ])
+        _c(
+          "a",
+          { staticClass: "button card-footer-item", attrs: { href: "/actor" } },
+          [_vm._v("Abbrechen")]
+        )
       ])
-    ]),
-    _vm._v(" "),
-    _c("footer", { staticClass: "card-footer" }, [
-      _c(
-        "a",
-        {
-          staticClass: "button card-footer-item",
-          attrs: { href: "/actor" },
-          on: { click: _vm.update }
-        },
-        [_vm._v("Bearbeiten")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        { staticClass: "button card-footer-item", attrs: { href: "/actor" } },
-        [_vm._v("Abbrechen")]
-      )
-    ])
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
@@ -57181,8 +57196,8 @@ var Form = /*#__PURE__*/function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\chris\PhpstormProjects\BIC4FilmsUnknown\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\chris\PhpstormProjects\BIC4FilmsUnknown\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Zauna\PhpstormProjects\BIC4FilmsUnknown\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Zauna\PhpstormProjects\BIC4FilmsUnknown\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
