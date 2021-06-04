@@ -90,7 +90,7 @@ To populate the database run the command ```php artisan db:seed``` in the filmin
 ## Wie man die Webseite verwendet:
 * Sobald man die Webseite ansteuert, findet man sich auf der Willkommensseite wieder.
   Hier hat man die Möglichkeit, sich mit einem bereits registrierten Nutzer anzumelden, oder einen neuen Benutzer anzulegen.
-    * Möchte man einen neuen Benutzer anlegen, muss man auf den Button "Register" drücken. Danach geht öffnet sich ein Fenster,
+    * Möchte man einen neuen Benutzer anlegen, muss man auf den Button "Registerierung" drücken. Danach öffnet sich ein Fenster,
         in dem man seinen Namen, seine E-Mail Adresse und sein Passwort 2x eingibt. 
     * Möchte man jedoch einen Registrierten Benutzer anmelden, öffnet sich ein Fenster wo man seine E-Mail Adresse und sein Passwort eingibt.
 * Danach gelangt man zum Hauptmenü.
@@ -101,7 +101,7 @@ To populate the database run the command ```php artisan db:seed``` in the filmin
     * Man kann mit dem Dropdownm Menü bei dem Film die Liste aller Filme anzeigen lassen.
         * Einen neuen Film erstellen.
 * Hat man eine Liste ausgewählt, hat man die Möglichkeit mittels des roten Links eine detailiertere Ansicht des betreffenden Schauspielers oder Films zu erhalten.
-    * Diese Ansicht dient gleichzeitig auch dafür den gewählten Eintrag zu bearbeiten oder zu löschen. 
+    * Diese Ansicht dient gleichzeitig auch dafür, den gewählten Eintrag zu bearbeiten oder zu löschen. 
         * Mit Abbrechen gelangt man wieder zurück zur jeweiligen Listenansicht.
         * Wählt man Bearbeiten gelangt man auf eine weitere Ansicht in der man dann je nach dem Name, Beschreibung und die Film ID verändern kann.
         * Wählt man Löschen, wird der Eintrag gelöscht und man gelangt zurück zur Liste.
