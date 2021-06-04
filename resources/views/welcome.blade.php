@@ -4,9 +4,13 @@
     <section class="hero is-fullheight-with-navbar">
         <div class="hero-body">
             <div class="container">
-                <h1  class="title">
-                    {{ env('APP_TITLE', 'Sample application') }}
-                </h1>
+                <header class="title" style="font-family: 'Arial Rounded MT Bold'; font-size: 100px">
+                        <strong>
+                            <i>
+                                Filme über das Unbekannte
+                            </i>
+                        </strong>
+                </header>
             </div>
         </div>
     </section>

@@ -11719,6 +11719,7 @@ label.panel-block:hover {
 .main {
   background: #F7F7F7;
   background-image: url(/images/Background.jpg?45be441b23da720157fddf65f389c337);
+  background-size: cover;
 }
 
 .is-fullheight.columns {
