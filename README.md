@@ -100,7 +100,7 @@ To populate the database run the command ```php artisan db:seed``` in the filmin
         * Eine Suche nach den Schauspielern oder einem Film durchführen.
     * Man kann mit dem Dropdownm Menü bei dem Film die Liste aller Filme anzeigen lassen.
         * Einen neuen Film erstellen.
-* Hat man eine Liste ausgewählt, hat man die Möglichkeit mittels des roten Links eine detailiertere Ansicht des betreffenden Schauspielers oder Films zu erhalten.
+* Hat man eine Liste ausgewählt, hat man die Möglichkeit mittels des roten Links (ID) eine detailiertere Ansicht des betreffenden Schauspielers oder Films zu erhalten.
     * Diese Ansicht dient gleichzeitig auch dafür, den gewählten Eintrag zu bearbeiten oder zu löschen. 
         * Mit Abbrechen gelangt man wieder zurück zur jeweiligen Listenansicht.
         * Wählt man Bearbeiten gelangt man auf eine weitere Ansicht in der man dann je nach dem Name, Beschreibung und die Film ID verändern kann.
