@@ -43,8 +43,6 @@ export default {
     data() {
         return {
             actors: [],
-            loading: true,
-            noDomains: false,
         }
     },
     methods: {
@@ -52,10 +50,6 @@ export default {
             axios.get('/list/actor')
                 .then(response => {
                     this.actors = response.data;
-                    console.log(response);
-                    this.loading = false;
-                    if (this.loading)
-                        this.noDomains = true;
                 });
         },
         getTime(Date){

@@ -16,7 +16,7 @@
                     </div>
                 </article>
                 <div class="field">
-                    <input class="input" type="Name" v-model="form.name">
+                    <input class="input"  v-model="form.name">
                 </div>
             </div>
             <div class="field">
@@ -27,7 +27,7 @@
                     </div>
                 </article>
                 <div class="field">
-                    <textarea class="textarea input" type="Beschreibung" v-model="form.description"
+                    <textarea class="textarea input" v-model="form.description"
                               rows="4"></textarea>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                     </div>
                 </article>
                 <div class="field">
-                    <input class="input" type="Film ID" v-model="form.film_id">
+                    <input class="input" v-model="form.film_id">
                 </div>
             </div>
         </div>

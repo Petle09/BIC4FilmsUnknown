@@ -51,10 +51,7 @@
 </template>
 
 <script>
-//import TableElement from "./base/TableComponent";
 export default {
-//    components: {TableElement},
-
     data() {
         return {
             form:new Form({ name: null, description: null, film_id: null }),

@@ -42,8 +42,7 @@ export default {
     data() {
         return {
             films: [],
-            loading: true,
-            noDomains: false,
+
         }
     },
     methods: {
@@ -51,10 +50,6 @@ export default {
             axios.get('/list/film')
                 .then(response => {
                     this.films = response.data;
-                    console.log(response);
-                    this.loading = false;
-                    if (this.loading)
-                        this.noDomains = true;
                 });
         },
         getTime(Date){

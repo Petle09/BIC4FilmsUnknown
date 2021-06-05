@@ -43,7 +43,6 @@
 export default {
     name: "CreateMovieComponent",
 
-
     data() {
         return {
             form:new Form({ name: null, description: null}),

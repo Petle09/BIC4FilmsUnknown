@@ -34,13 +34,11 @@
 
 <script>
 import TableElement from "./base/TableComponent";
-import FindActorComponent from "./FindActorComponent";
 import moment from "moment";
 
 export default {
     name: "SearchActorComponent",
     components: {
-        FindActorComponent,
         TableElement,
     },
     props: ['title'],
@@ -52,8 +50,7 @@ export default {
             actors: [],
             messageName: '',
             messageID: '',
-            loading: true,
-            noDomains: false,
+
         }
     },
     methods: {
@@ -61,10 +58,6 @@ export default {
             axios.get('/list/actor')
                 .then(response => {
                     this.actors = response.data;
-                    console.log(response);
-                    this.loading = false;
-                    if (this.loading)
-                        this.noDomains = true;
                 });
         },
         getTime(Date){
